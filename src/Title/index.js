@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styles";
 
 import HouseSvg from "../../img/icons/House.svg";
-import LupaSvg from "../../img/icons/Lupa.svg";
+import MagnifierSvg from "../../img/icons/Magnifier.svg";
 import LogoSvg from "../../img/logo.svg";
 
 export default function Title() {
@@ -16,14 +16,14 @@ export default function Title() {
         colors={["#048C34", "#FFF", "#048C34"]}
         style={styles.gradient}
       >
-        <View style={styles.containersHouseLupa}>
+        <View style={styles.containersHouseMagnifier}>
           <HouseSvg style={styles.svgs} />
         </View>
         <View style={styles.containerLogo}>
           <LogoSvg style={styles.svgs} />
         </View>
-        <View style={styles.containersHouseLupa}>
-          <LupaSvg style={styles.svgs}></LupaSvg>
+        <View style={styles.containersHouseMagnifier}>
+          <MagnifierSvg style={styles.svgs} />
         </View>
       </LinearGradient>
     </View>

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  containersHouseLupa: {
+  containersHouseMagnifier: {
     height: "100%",
     width: "20%",
     justifyContent: "center",
