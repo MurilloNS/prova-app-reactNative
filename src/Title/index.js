@@ -16,14 +16,8 @@ export default function Title() {
         colors={["#048C34", "#FFF", "#048C34"]}
         style={styles.gradient}
       >
-        <View style={styles.containersHouseMagnifier}>
-          <HouseSvg style={styles.svgs} />
-        </View>
         <View style={styles.containerLogo}>
           <LogoSvg style={styles.svgs} />
-        </View>
-        <View style={styles.containersHouseMagnifier}>
-          <MagnifierSvg style={styles.svgs} />
         </View>
       </LinearGradient>
     </View>

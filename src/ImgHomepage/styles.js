@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
     width: 411,
     flexDirection: "row",
   },
+  logoSvg: {
+    marginLeft: 20,
+    marginRight: 30,
+  },
   iconsSocialMedia: {
     height: "8%",
     width: "9%",

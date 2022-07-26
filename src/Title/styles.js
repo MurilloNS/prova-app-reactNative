@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   navbar: {
-    height: "10%",
+    height: "7%",
     width: "100%",
   },
   gradient: {

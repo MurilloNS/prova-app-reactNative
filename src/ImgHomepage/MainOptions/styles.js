@@ -2,9 +2,11 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   mainOptions: {
+    borderTopColor: "#29A63C",
+    borderTopWidth: 3,
     flexDirection: "row",
     backgroundColor: "#E2E2E2",
-    height: "35%",
+    height: "19%",
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
