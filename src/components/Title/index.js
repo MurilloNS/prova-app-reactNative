@@ -3,9 +3,9 @@ import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styles";
 
-import HouseSvg from "../../img/icons/House.svg";
-import MagnifierSvg from "../../img/icons/Magnifier.svg";
-import LogoSvg from "../../img/logo.svg";
+import HouseSvg from "../../../img/icons/House.svg";
+import MagnifierSvg from "../../../img/icons/Magnifier.svg";
+import LogoSvg from "../../../img/logo.svg";
 
 export default function Title() {
   return (

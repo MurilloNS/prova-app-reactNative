@@ -8,7 +8,7 @@ import IconPort from "../../../img/icons/IconPort.svg";
 import Location from "../../../img/icons/Location.svg";
 import Money from "../../../img/icons/Money.svg";
 
-export default function () {
+export default function ListOptions() {
   return (
     <View style={styles.container}>
       <View style={styles.containerListOptions}>
