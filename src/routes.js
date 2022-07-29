@@ -8,7 +8,7 @@ import AnchoredShips from "./views/AnchoredShips";
 
 import HouseSvg from "../img/icons/House.svg";
 import ClockSvg from "../img/icons/Clock.svg";
-import BerthedShipsSvg from "../img/icons/BerthedShips.svg";
+import RopeSvg from "../img/icons/Rope.svg";
 import AnchorSvg from "../img/icons/Anchor.svg";
 
 const Tab = createBottomTabNavigator();
@@ -20,11 +20,12 @@ export default function Tabs() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: "#182E4D",
-          height: "8%",
+          height: 55,
         },
         tabBarActiveTintColor: "#FFF",
         tabBarInactiveTintColor: "#FFF",
-        tabBarActiveBackgroundColor: "#264775"
+        tabBarActiveBackgroundColor: "#264775",
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tab.Screen
@@ -48,7 +49,6 @@ export default function Tabs() {
               style={{ width: 30, height: 30 }}
               source={require("../img/icons/Clock.svg")}
             />
-            
           ),
         }}
       />
@@ -57,7 +57,7 @@ export default function Tabs() {
         component={BerthedShips}
         options={{
           tabBarIcon: () => (
-            <BerthedShipsSvg
+            <RopeSvg
               style={{ width: 45, height: 45 }}
               source={require("../img/icons/Clock.svg")}
             />
