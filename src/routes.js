@@ -9,7 +9,7 @@ import AnchoredShips from "./views/AnchoredShips";
 import HouseSvg from "../img/icons/House.svg";
 import ClockSvg from "../img/icons/Clock.svg";
 import BerthedShipsSvg from "../img/icons/BerthedShips.svg";
-import AnchoredShipsSvg from "../img/icons/AnchoredShips.svg";
+import AnchorSvg from "../img/icons/Anchor.svg";
 
 const Tab = createBottomTabNavigator();
 
@@ -69,9 +69,9 @@ export default function Tabs() {
         component={AnchoredShips}
         options={{
           tabBarIcon: () => (
-            <AnchoredShipsSvg
+            <AnchorSvg
               style={{ width: 40, height: 40 }}
-              source={require("../img/icons/AnchoredShips.svg")}
+              source={require("../img/icons/Anchor.svg")}
             />
           ),
         }}
