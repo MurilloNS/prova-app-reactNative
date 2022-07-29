@@ -4,7 +4,7 @@ import { View, ImageBackground, Text } from "react-native";
 import styles from "./styles";
 
 import LogoSvg from "../../../img/logo.svg";
-import BerthedShipsSvg from "../../../img/icons/BerthedShips.svg";
+import RopeSvg from "../../../img/icons/Rope.svg";
 
 export default function BerthedShips(){
     return (
@@ -16,8 +16,8 @@ export default function BerthedShips(){
             <View style={styles.boxLogoSvg}>
               <LogoSvg />
             </View>
-            <View style={styles.boxBerthedShipSvg}>
-              <BerthedShipsSvg style={styles.berthedShipSvg} />
+            <View style={styles.boxRopeSvg}>
+              <RopeSvg style={styles.ropeSvg} />
             </View>
             <View style={styles.boxText}>
               <Text style={styles.text}>Navios</Text>
@@ -28,8 +28,3 @@ export default function BerthedShips(){
         </View>
       );
 }
-
-
-
-
-

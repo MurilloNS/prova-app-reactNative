@@ -15,19 +15,15 @@ const styles = StyleSheet.create({
         width: "30%",
         marginLeft: 20,
     },
-    boxBerthedShipSvg: {
+    boxRopeSvg: {
         height: "50%",
         width: "20%",
         marginLeft: "10%",
         flexDirection: "row",
     },
-    berthedShipSvg: {
+    ropeSvg: {
         height: "110%",
         width: "110%",
-    },
-    textBerthedShip: {
-        color: "#FFFFFF",
-        fontSize: 40,
     },
     boxText: {
         marginLeft: "40%",
