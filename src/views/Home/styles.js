@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     marginRight: 30,
     marginBottom: -10,
     marginRight: -20,
-    
   },
   mainOptions: {
     borderTopColor: "#04ADBF",

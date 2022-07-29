@@ -20,11 +20,12 @@ export default function Tabs() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: "#182E4D",
-          height: "8%",
+          height: 55,
         },
         tabBarActiveTintColor: "#FFF",
         tabBarInactiveTintColor: "#FFF",
-        tabBarActiveBackgroundColor: "#264775"
+        tabBarActiveBackgroundColor: "#264775",
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tab.Screen
@@ -48,7 +49,6 @@ export default function Tabs() {
               style={{ width: 30, height: 30 }}
               source={require("../img/icons/Clock.svg")}
             />
-            
           ),
         }}
       />
