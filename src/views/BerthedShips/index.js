@@ -13,9 +13,8 @@ export default function BerthedShips(){
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    { label: "op1", value: "op1" },
-    { label: "op2", value: "op2" },
-    { label: "op3", value: "op3" },
+    { label: "Tipo de Carga", value: "Tipo de Carga" },
+    { label: "Local do Navio", value: "Local do Navio" },
   ]);
 
   return (
@@ -35,9 +34,6 @@ export default function BerthedShips(){
           <Text style={styles.text}>Atracados</Text>
         </View>
       </ImageBackground>
-
-
-
       <View style={styles.mainOptions}>
         <View style={styles.boxMagnifierSvg}>
           <MagnifierSvg style={styles.magnifierSvg} />
@@ -64,8 +60,6 @@ export default function BerthedShips(){
           />
         </View>
       </View>
-
-
       <View style={styles.container}>
         <View style={styles.containerCardInfo}>
           <View style={styles.boxSvg}/>
@@ -90,9 +84,6 @@ export default function BerthedShips(){
           </View>
         </View>
       </View>
-
-
-      
     </View>
   );
 }

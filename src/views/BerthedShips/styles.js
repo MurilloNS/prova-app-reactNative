@@ -160,8 +160,5 @@ const styles = StyleSheet.create({
     textButton: {
         color: "#FFFFFF",
     }
-
-
-
 });
 export default styles;
