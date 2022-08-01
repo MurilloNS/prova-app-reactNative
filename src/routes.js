@@ -58,7 +58,7 @@ export default function Tabs() {
         options={{
           tabBarIcon: () => (
             <RopeSvg
-              style={{ width: 45, height: 45 }}
+              style={{ width: 38, height: 38 }}
               source={require("../img/icons/Clock.svg")}
             />
           ),
