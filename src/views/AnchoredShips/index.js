@@ -1,14 +1,24 @@
-import React from "react";
-import { View, ImageBackground, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, ImageBackground, Text, TouchableOpacity, TextInput } from "react-native";
+import DropDownPicker from "react-native-dropdown-picker";
 
 import styles from "./styles";
 
 
-import LogoSvg from "../../../img/logo.svg"
-import AnchorSvg from "../../../img/icons/Anchor.svg"
-import { Button } from "react-native-web";
+import LogoSvg from "../../../img/logo.svg";
+import AnchorSvg from "../../../img/icons/Anchor.svg";
+import MagnifierSvg from "../../../img/icons/Magnifier.svg";
+import Plus from "../../../img/icons/Plus.svg";
 
 export default function AnchoredShips() {
+
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+        { label: "Tipo de Carga", value: "Tipo de Carga" },
+        { label: "Local do Navio", value: "Local do Navio" },
+    ]);
+
     return (
         <View>
             <ImageBackground
@@ -21,43 +31,70 @@ export default function AnchoredShips() {
                 <View style={styles.boxAnchoredShipsSvg}>
                     <AnchorSvg style={styles.AnchoredShipsSvg} />
                 </View>
-                    <View style={styles.boxText}>
-                        <Text style={styles.text}>Navios</Text>
-                        <Text style={styles.text}>Fundeados</Text>
-                    </View>
+                <View style={styles.boxText}>
+                    <Text style={styles.text}>Navios</Text>
+                    <Text style={styles.text}>Fundeados</Text>
+                </View>
             </ImageBackground>
-                <View style={styles.mainOptions} />
+            <View style={styles.mainOptions} >
+                <View style={styles.boxMagnifierSvg}>
+                    <MagnifierSvg style={styles.magnifierSvg} />
+                </View>
+                <TextInput style={styles.input} placeholder="   Buscar por Navio" />
+
+                <View style={styles.boxPlusSvg}>
+                    <Plus style={styles.plusSvg} />
+                </View>
+                <View style={styles.boxDrop}>
+                    <DropDownPicker
+                        style={styles.dropDown}
+                        open={open}
+                        value={value}
+                        items={items}
+                        setOpen={setOpen}
+                        setValue={setValue}
+                        setItems={setItems}
+                        showArrowIcon={false}
+                        placeholder="Filtrar"
+                        showTickIcon={false}
+                        selectedItemContainerStyle={{
+                            backgroundColor: "#DCDCDC",
+                        }}
+                    />
+                </View>
+
+            </View>
 
             <View style={styles.container}>
-                 <View style={styles.containerCardInfo}>
-                    
-                    <View style={styles.boxSvg}/>
-                    <View style={styles.textsInfo}>   
-                    <Text style={styles.cardTextLocal}>Local</Text>
-                    <Text style={styles.cardTextName}>Nome do Navio</Text> 
-                    <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>  
-                       
+                <View style={styles.containerCardInfo}>
+
+                    <View style={styles.boxSvg} />
+                    <View style={styles.textsInfo}>
+                        <Text style={styles.cardTextLocal}>Local</Text>
+                        <Text style={styles.cardTextName}>Nome do Navio</Text>
+                        <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
+
                         <View style={styles.cardTextCargo}>
                             <Text>Carga</Text>
                             <Text>Descarga</Text>
-                        </View> 
+                        </View>
                         <View style={styles.cardTextCargoValue}>
                             <Text>00000</Text>
                             <Text style={styles.valueUnload}>00000</Text>
-                        </View> 
+                        </View>
 
-                        <View style={styles.buttonDetails}>
                         <TouchableOpacity style={styles.Button}>
-                            <Text style={styles.textButton}>Detalhes</Text>
+                            <View style={styles.buttonDetails}>
+                                <Text style={styles.textButton}>Detalhes</Text>
+                            </View>
                         </TouchableOpacity>
-                        </View>
-                        </View>
-                        
-                    
-                 </View>
+                    </View>
 
-                 
+
+                </View>
+
+
             </View>
         </View>
-    )
+    );
 }

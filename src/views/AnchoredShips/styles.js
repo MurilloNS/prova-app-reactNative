@@ -7,11 +7,6 @@ const style = StyleSheet.create({
         width: 411,
         height: 149,
     },
-    mainOptions:{
-        borderTopColor:"#04ADBF",
-        borderTopWidth: 3,
-        marginBottom: 15,
-    },
     boxLogoSvg:{
         height: "40%",
         width: "30%",
@@ -29,7 +24,6 @@ const style = StyleSheet.create({
         width: "100%",
        
     },
-
     boxText:{
         marginLeft: "40%",
         marginTop: "-20%",
@@ -46,10 +40,58 @@ const style = StyleSheet.create({
         
 
     },
+    mainOptions:{
+        borderTopColor:"#04ADBF",
+        borderTopWidth: 3,
+        marginBottom: 15,
+        height: 70,
+        backgroundColor: "#E2E2E2",
+        flexDirection: "row",
+        alignItems: "center",
+        
+    },
+    boxMagnifierSvg:{
+        height: "100%",
+        width: "15%",
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    magnifierSvg:{
+        height: 35,
+        width: 35,
+    },
+    input:{
+        width: "40%",
+        height: 49,
+        borderRadius: 10,
+        backgroundColor: "#F6F6F6",
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        marginRight: "5%",
+    },
+    boxPlusSvg:{
+        height: "100%",
+        width: "10%",
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    plusSvg:{
+        height: 35,
+        width: 35,
+    },
+    dropDown:{
+        borderRadius: 10,
+    },
+    boxDrop:{
+        width: "28%",
+    },
     container:{
         height: "auto",
         justifyContent: "center",
         alignItems: "center",
+        zIndex: -1,
     },
     containerCardInfo:{
         backgroundColor: "#FFFFFF",
