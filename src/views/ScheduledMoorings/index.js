@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { View, ImageBackground, Text, TextInput } from "react-native";
+import {
+  View,
+  ImageBackground,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 
 import styles from "./styles";
@@ -13,6 +19,7 @@ export default function ScheduledMoorings() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
+    { label: "Todos", value: "todos" },
     { label: "Liberado", value: "liberado" },
     { label: "Pendente", value: "pendente" },
     { label: "Aguardando", value: "aguardando" },
@@ -53,12 +60,53 @@ export default function ScheduledMoorings() {
             setValue={setValue}
             setItems={setItems}
             showArrowIcon={false}
-            placeholder="Filtrar"
             showTickIcon={false}
+            placeholder="Filtrar"
             selectedItemContainerStyle={{
               backgroundColor: "#DCDCDC",
             }}
           />
+        </View>
+      </View>
+
+      <View style={styles.situations}>
+        <View style={styles.dataHour}>
+          <Text style={styles.textDataHour}>15/07/2022</Text>
+          <Text style={styles.textDataHour}>19:00/01:00</Text>
+        </View>
+        <View style={styles.boxesSituations}>
+          <View style={styles.boxSituation}></View>
+          <Text style={styles.textSituation}>Liberado</Text>
+        </View>
+        <View style={styles.boxSituation}></View>
+        <Text style={styles.textSituation}>Pendente</Text>
+        <View style={styles.boxSituation}></View>
+        <Text style={styles.textSituation}>Análise</Text>
+      </View>
+      <View style={styles.container}>
+        <View style={styles.containerCardInfo}>
+          <View style={styles.boxSvg} />
+          <View style={styles.textsInfo}>
+            <Text style={styles.cardTextLocal}>Local</Text>
+
+            <Text style={styles.cardTextName}>Nome do Navio</Text>
+            <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
+
+            <View style={styles.cardTextCargo}>
+              <Text>Viagem</Text>
+              <Text style={styles.textDuv}>DUV</Text>
+            </View>
+            <View style={styles.cardTextCargoValue}>
+              <Text>00000</Text>
+              <Text style={styles.valueUnload}>00000</Text>
+            </View>
+
+            <TouchableOpacity style={styles.Button}>
+              <View style={styles.buttonDetails}>
+                <Text style={styles.textButton}>Detalhes</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
