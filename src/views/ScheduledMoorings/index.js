@@ -5,8 +5,10 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
+import axios from "axios";
 
 import styles from "./styles";
 
@@ -25,6 +27,12 @@ export default function ScheduledMoorings() {
     { label: "Aguardando", value: "aguardando" },
   ]);
 
+  const axios = require('axios').default;
+
+  axios.get("https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2")
+    .then((response) => Alert(response)
+      
+    )
   return (
     <View>
       <ImageBackground

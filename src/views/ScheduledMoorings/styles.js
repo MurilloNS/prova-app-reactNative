@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
   mainOptions: {
     borderTopColor: "#04ADBF",
     borderTopWidth: 3,
-    marginBottom: 15,
     height: 70,
     backgroundColor: "#E2E2E2",
     flexDirection: "row",
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
   },
   containerCardInfo: {
     backgroundColor: "#FFFFFF",
-    height: 195,
+    height: 230,
     width: "90%",
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
@@ -181,7 +180,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   buttonDetails: {
-    marginTop: 10,
+    marginTop: 30,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
