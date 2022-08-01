@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { View, ImageBackground, Text, TouchableOpacity, TextInput } from "react-native";
+import { View, 
+    ImageBackground, 
+    Text, 
+    TouchableOpacity, 
+    TextInput 
+} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 
 import styles from "./styles";
@@ -8,13 +13,14 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import AnchorSvg from "../../../img/icons/Anchor.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
-import Plus from "../../../img/icons/Plus.svg";
+import FilterSvg from "../../../img/icons/Filter.svg";
 
 export default function AnchoredShips() {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
     const [items, setItems] = useState([
+        { label: "Todos", value: "Todos"},
         { label: "Tipo de Carga", value: "Tipo de Carga" },
         { label: "Local do Navio", value: "Local do Navio" },
     ]);
@@ -42,8 +48,8 @@ export default function AnchoredShips() {
                 </View>
                 <TextInput style={styles.input} placeholder="   Buscar por Navio" />
 
-                <View style={styles.boxPlusSvg}>
-                    <Plus style={styles.plusSvg} />
+                <View style={styles.boxFilterSvg}>
+                    <FilterSvg style={styles.filterSvg} />
                 </View>
                 <View style={styles.boxDrop}>
                     <DropDownPicker

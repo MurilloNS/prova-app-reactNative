@@ -71,13 +71,13 @@ const style = StyleSheet.create({
         borderBottomWidth: 1,
         marginRight: "5%",
     },
-    boxPlusSvg:{
+    boxFilterSvg:{
         height: "100%",
         width: "10%",
         flexDirection: "row",
         alignItems: "center",
     },
-    plusSvg:{
+    filterSvg:{
         height: 35,
         width: 35,
     },

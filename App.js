@@ -8,6 +8,7 @@ import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
 import ScheduledMoorings from "./src/views/ScheduledMoorings";
 import BerthedShips from "./src/views/BerthedShips";
 import AnchoredShips from "./src/views/AnchoredShips";
+import PortOperations from "./src/views/PortOperations";
 
 import Routes from "./src/routes";
 
@@ -22,6 +23,7 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={Routes} />
           <Stack.Screen name="Programados" component={ScheduledMoorings} />
+          <Stack.Screen name="PortOperations" component={PortOperations}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

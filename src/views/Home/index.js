@@ -29,10 +29,10 @@ export default function Home({ navigation }) {
           <View style={styles.firstBoxSvg}>
             <ShipSvg style={styles.iconSvg} />
           </View>
-          <View style={styles.boxText}>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
             <Text style={styles.textListOptions}>Operações Portuárias</Text>
             <Text style={styles.text}>Navegação e Movimentação de navios</Text>
-          </View>
+            </TouchableOpacity>
         </View>
 
         <View style={styles.containerListOptions}>
