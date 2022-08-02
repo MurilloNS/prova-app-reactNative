@@ -10,6 +10,7 @@ import BerthedShips from "./src/views/BerthedShips";
 import AnchoredShips from "./src/views/AnchoredShips";
 import PortOperations from "./src/views/PortOperations";
 import ShipsInSantos from "./src/views/ShipsInSantos";
+import ServiceCentral from "./src/views/ServiceCentral"
 
 import Routes from "./src/routes";
 
@@ -26,6 +27,7 @@ export default function App() {
           <Stack.Screen name="Programados" component={ScheduledMoorings} />
           <Stack.Screen name="PortOperations" component={PortOperations}/>
           <Stack.Screen name="ShipsInSantos" component={ShipsInSantos}/>
+          <Stack.Screen name="ServiceCentral" component={ServiceCentral}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

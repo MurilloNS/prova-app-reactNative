@@ -49,10 +49,10 @@ export default function Home({ navigation }) {
           <View style={styles.boxSvg}>
             <CabecaSvg style={styles.iconCabecaSvg} />
           </View>
-          <View style={styles.boxText}>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ServiceCentral")}>
             <Text style={styles.textListOptions}>Central de Serviços</Text>
             <Text style={styles.text}>Principais serviços do Porto</Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.containerListOptions}>
