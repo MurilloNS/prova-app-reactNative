@@ -9,6 +9,7 @@ import ShipSvg from "../../../img/icons/Ship.svg";
 import CabecaSvg from "../../../img/icons/Cabeca.svg";
 import LocationSvg from "../../../img/icons/Location.svg";
 import MoneySvg from "../../../img/icons/Money.svg";
+import IconPortSvg from "../../../img/icons/IconPort.svg";
 
 export default function Home({ navigation }) {
   return (
@@ -27,6 +28,15 @@ export default function Home({ navigation }) {
       <View style={styles.container}>
         <View style={styles.firstContainerListOption}>
           <View style={styles.firstBoxSvg}>
+            <IconPortSvg style={styles.iconSvg} />
+          </View>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ShipsInSantos")}>
+            <Text style={styles.textListOptions}>Navios em Santos</Text>
+            <Text style={styles.text}>Navios que estão na região portuária.</Text>
+            </TouchableOpacity>
+        </View>
+        <View style={styles.containerListOptions}>
+          <View style={styles.boxSvg}>
             <ShipSvg style={styles.iconSvg} />
           </View>
           <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
