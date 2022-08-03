@@ -7,41 +7,41 @@ import LogoSvg from "../../../img/logo.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 import IconPortSvg from "../../../img/icons/IconPort.svg"
 
-export default function ServiceCentral(){
+export default function ServiceCentral() {
 
-    return(
+  return (
+    <View>
+      <ImageBackground
+        style={styles.photoHomepage}
+        source={require("../../../img/PhotoHomepage.jpg")}>
         <View>
-            <ImageBackground
-                style={styles.photoHomepage}
-                source={require("../../../img/PhotoHomepage.jpg")}>
-                <View>
-                    <LogoSvg style={styles.logoSvg}/>
-                </View>
-                <View style={styles.boxText}>
-                    <Text style={styles.text}>Central</Text>
-                    <Text style={styles.text}>de Serviços</Text>
-                </View>
-                </ImageBackground>
+          <LogoSvg style={styles.logoSvg} />
+        </View>
+        <View style={styles.boxText}>
+          <Text style={styles.text}>Central</Text>
+          <Text style={styles.text}>de Serviços</Text>
+        </View>
+      </ImageBackground>
 
-                <View style={styles.mainOptions}/>
-                <View style={styles.container}>
+      <View style={styles.mainOptions} />
+      <View style={styles.container}>
         <View style={styles.firstContainerListOption}>
           <View style={styles.firstBoxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ShipsInSantos")}>
+          <TouchableOpacity style={styles.boxText}>
             <Text style={styles.textListOptions}>Cliente e Fornecedor</Text>
             <Text style={styles.text}>Portal do Cliente e Fornecedor</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
         <View style={styles.containerListOptions}>
           <View style={styles.boxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
+          <TouchableOpacity style={styles.boxText}>
             <Text style={styles.textListOptions}>Supervia</Text>
             <Text style={styles.text}>Supervia</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.containerListOptions}>
@@ -58,7 +58,7 @@ export default function ServiceCentral(){
           <View style={styles.boxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ServiceCentral")}>
+          <TouchableOpacity style={styles.boxText}>
             <Text style={styles.textListOptions}>Porto sem Papel</Text>
             <Text style={styles.text}>Porto sem Papel</Text>
           </TouchableOpacity>
@@ -75,7 +75,7 @@ export default function ServiceCentral(){
           </View>
         </View>
       </View>
-      <SocialMediaSvgs/>
-        </View>
-    );
+      <SocialMediaSvgs />
+    </View>
+  );
 }

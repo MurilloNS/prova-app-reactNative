@@ -5,7 +5,7 @@ import Home from "./views/Home";
 import ScheduledMoorings from "./views/ScheduledMoorings";
 import BerthedShips from "./views/BerthedShips";
 import AnchoredShips from "./views/AnchoredShips";
-import PortOperations from "./views/PortOperations";
+
 
 import HouseSvg from "../img/icons/House.svg";
 import ClockSvg from "../img/icons/Clock.svg";
@@ -77,6 +77,7 @@ export default function Tabs() {
           ),
         }}
       />
+      
       
     </Tab.Navigator>
   );

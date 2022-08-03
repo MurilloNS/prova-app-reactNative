@@ -59,12 +59,12 @@ export default function Home({ navigation }) {
           <View style={styles.boxSvg}>
             <LocationSvg style={styles.iconSvg} />
           </View>
-          <View style={styles.boxText}>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("DiscoverPort")}>
             <Text style={styles.textListOptions}>Conheça o Porto</Text>
             <Text style={styles.text}>
               Conheça o complexo portuário, sua história e mais
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.lastContainerListOptions}>
