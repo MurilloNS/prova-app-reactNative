@@ -42,32 +42,26 @@ export default function PortOperations() {
             <CaladoSvg style={styles.iconSvg} />
           </View>
           <View style={styles.boxText}>
-            <Text style={styles.textListOptions}>Central de Serviços</Text>
-            <Text style={styles.text}>Principais serviços do Porto</Text>
+            <Text style={styles.textListOptions}>Calado Máximo</Text>
+            <Text style={styles.text}>Calado Máximo Operacional</Text>
           </View>
         </View>
-
         <View style={styles.containerListOptions}>
           <View style={styles.boxSvg}>
             <PranchaSvg style={styles.iconSvg} />
           </View>
           <View style={styles.boxText}>
-            <Text style={styles.textListOptions}>Conheça o Porto</Text>
-            <Text style={styles.text}>
-              Conheça o complexo portuário, sua história e mais
-            </Text>
+            <Text style={styles.textListOptions}>Prancha Operacional</Text>
+            <Text style={styles.text}>Prancha Operacional</Text>
           </View>
         </View>
-
         <View style={styles.containerListOptions}>
           <View style={styles.boxSvg}>
             <BercosSvg style={styles.iconSvg} />
           </View>
           <View style={styles.boxText}>
-            <Text style={styles.textListOptions}>Informações Financeiras</Text>
-            <Text style={styles.text}>
-              A SPA, Governança corporativa, Informações financeiras e mais
-            </Text>
+            <Text style={styles.textListOptions}>Berços de Atracação</Text>
+            <Text style={styles.text}>Berços de Atracação</Text>
           </View>
         </View>
         <View style={styles.lastContainerListOptions}>
@@ -75,17 +69,11 @@ export default function PortOperations() {
             <FundeioSvg style={styles.iconSvg} />
           </View>
           <View style={styles.boxText}>
-            <Text style={styles.textListOptions}>Informações Financeiras</Text>
-            <Text style={styles.text}>
-              A SPA, Governança corporativa, Informações financeiras e mais
-            </Text>
+            <Text style={styles.textListOptions}>Áreas de Fundeio</Text>
+            <Text style={styles.text}>Áreas de Fundeio</Text>
           </View>
         </View>        
-
-                
             </View>
-            
-            
             <SocialMediaSvgs />
         </View>
     )

@@ -14,7 +14,7 @@ import IconPortSvg from "../../../img/icons/IconPort.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import FilterSvg from "../../../img/icons/Filter.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
-import { styleProps } from "react-native-web/dist/cjs/modules/forwardedProps";
+
 
 export default function ShipsInSantos(){
 
