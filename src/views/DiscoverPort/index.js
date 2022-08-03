@@ -5,7 +5,10 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 import IconPortSvg from "../../../img/icons/IconPort.svg";
-import BookSvg from "../../../img/icons/Book.svg"
+import BookSvg from "../../../img/icons/Book.svg";
+import IconComplexSvg from "../../../img/icons/IconComplex.svg";
+import IconAgentsSvg from "../../../img/icons/IconAgents.svg";
+import IconInfraSvg from "../../../img/icons/IconInfra.svg";
 import LocationSvg from "../../../img/icons/Location.svg";
 
 
@@ -38,7 +41,7 @@ export default function ServiceCentral() {
                 </View>
                 <View style={styles.containerListOptions}>
                     <View style={styles.boxSvg}>
-                        <IconPortSvg style={styles.iconSvg} />
+                        <IconComplexSvg style={styles.iconDifSvg} />
                     </View>
                     <TouchableOpacity style={styles.boxText}>
                         <Text style={styles.textListOptions}>Complexo Portuário</Text>
@@ -48,7 +51,7 @@ export default function ServiceCentral() {
 
                 <View style={styles.containerListOptions}>
                     <View style={styles.boxSvg}>
-                        <IconPortSvg style={styles.iconSvg} />
+                        <IconAgentsSvg style={styles.iconSvg} />
                     </View>
                     <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>Agentes do Porto</Text>
@@ -58,7 +61,7 @@ export default function ServiceCentral() {
 
                 <View style={styles.containerListOptions}>
                     <View style={styles.boxSvg}>
-                        <IconPortSvg style={styles.iconSvg} />
+                        <IconInfraSvg style={styles.iconDifSvg} />
                     </View>
                     <TouchableOpacity style={styles.boxText}>
                         <Text style={styles.textListOptions}>Infraestrutura</Text>

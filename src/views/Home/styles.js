@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     width: 50,
   },
   iconCabecaSvg: {
-    marginLeft: 10,
+    marginLeft: 17,
   },
   boxText: {
     marginTop: "2%",

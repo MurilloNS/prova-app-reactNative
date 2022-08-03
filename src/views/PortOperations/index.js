@@ -3,6 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
 import Routes from "../../routes";
 
 import styles from "./styles";
+import ShipSvg from "../../../img/icons/Ship.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 import CaladoSvg from "../../../img/icons/Calado.svg";
 import PranchaSvg from "../../../img/icons/Prancha.svg";
@@ -14,30 +15,38 @@ import LogoSvg from "../../../img/logo.svg";
 
 
 export default function PortOperations() {
-    return (
-        <View>
-            <ImageBackground
-                style={styles.photoHomepage}
-                source={require("../../../img/PhotoHomepage.jpg")}
-            >
-                <View>
-                    <LogoSvg style={styles.logoSvg} />
-                </View>
-            </ImageBackground>
+  return (
+    <View>
+      <ImageBackground
+        style={styles.photoHomepage}
+        source={require("../../../img/PhotoHomepage.jpg")}
+      >
+        <View style={styles.logoSvg}>
+          <LogoSvg/>
+          <View style={styles.boxShipSvg}>
+            <ShipSvg style={styles.shipSvg}/>
+            <View style={styles.boxText}>
+          <Text style={styles.text}>Operações</Text>
+          <Text style={styles.text}>Portuárias</Text>
+        </View>
+          </View>
+        </View>
+        
+      </ImageBackground>
 
-            <View style={styles.mainOptions} />
+      <View style={styles.mainOptions} />
 
-            <View style={styles.container}>
-            <View style={styles.firstContainerListOption}>
-                    <View style={styles.firstBoxSvg}>
-                        <CompassSvg style={styles.iconSvg} />
-                    </View>
-                    <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
-                        <Text style={styles.textListOptions}>Navegação e Movimento</Text>
-                        <Text style={styles.text}>Navegação e Movimentação de navios</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.containerListOptions}>
+      <View style={styles.container}>
+        <View style={styles.firstContainerListOption}>
+          <View style={styles.firstBoxSvg}>
+            <CompassSvg style={styles.iconSvg} />
+          </View>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
+            <Text style={styles.textListOptions}>Navegação e Movimento</Text>
+            <Text style={styles.text}>Navegação e Movimentação de navios</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.containerListOptions}>
           <View style={styles.boxSvg}>
             <CaladoSvg style={styles.iconSvg} />
           </View>
@@ -72,9 +81,9 @@ export default function PortOperations() {
             <Text style={styles.textListOptions}>Áreas de Fundeio</Text>
             <Text style={styles.text}>Áreas de Fundeio</Text>
           </View>
-        </View>        
-            </View>
-            <SocialMediaSvgs />
         </View>
-    )
+      </View>
+      <SocialMediaSvgs />
+    </View>
+  )
 }

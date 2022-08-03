@@ -1,3 +1,4 @@
+import reactDom from "react-dom";
 import { StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
@@ -7,10 +8,20 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     logoSvg:{
+        height: "40%",
+        width: "30%",
         marginLeft: 20,
-        marginRight: 30,
-        marginBottom: -10,
-        marginRight: -20,
+        flexDirection: "column",
+    },
+    boxShipSvg:{
+        height: "50%",
+        width: "20%",
+        marginLeft: "10%",
+        flexDirection: "row",
+    },
+    shipSvg:{
+        height: "100%",
+        width: "100%",
     },
     mainOptions:{
         borderColor: "#04ADBF",
