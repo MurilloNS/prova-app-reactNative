@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginRight: "5%",
   },
-  boxPlusSvg: {
+  boxFilterSvg: {
     height: "100%",
     width: "10%",
     flexDirection: "row",
     alignItems: "center",
   },
-  plusSvg: {
+  filterSvg: {
     height: 35,
     width: 35,
   },
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   situations: {
     width: "100%",
     height: 45,
-    backgroundColor: "green",
+    backgroundColor: "#264775",
     flexDirection: "row",
     alignItems: "center",
     zIndex: -1,
@@ -104,7 +104,19 @@ const styles = StyleSheet.create({
   boxSituation: {
     height: 18,
     width: 18,
-    backgroundColor: "blue",
+    backgroundColor: "#32CD32",
+    marginLeft: 8,
+  },
+  boxSituation1: {
+    height: 18,
+    width: 18,
+    backgroundColor: "#FFD700",
+    marginLeft: 8,
+  },
+  boxSituation2: {
+    height: 18,
+    width: 18,
+    backgroundColor: "#FFF",
     marginLeft: 8,
   },
   textSituation: {

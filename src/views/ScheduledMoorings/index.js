@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   ImageBackground,
   Text,
   TextInput,
   TouchableOpacity,
-  Alert,
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
@@ -15,7 +14,10 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import ClockSvg from "../../../img/icons/Clock.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
-import Plus from "../../../img/icons/Plus.svg";
+import FilterSvg from "../../../img/icons/Filter.svg";
+
+const baseUrl =
+  "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2";
 
 export default function ScheduledMoorings() {
   const [open, setOpen] = useState(false);
@@ -27,14 +29,24 @@ export default function ScheduledMoorings() {
     { label: "Aguardando", value: "aguardando" },
   ]);
 
-  const axios = require('axios').default;
+  const [infoScheduled, setInfoScheduled] = useState({});
 
-  axios.get("https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2")
-    .then((response) => Alert(response)
-      
-    )
+  const getScheduled = () => {
+    axios
+      .get(baseUrl)
+      .then((response) => {
+        alert(JSON.stringify(response.data));
+        setInfoScheduled(response);
+      })
+      .catch(function (error) {
+        alert(error.message);
+      });
+  };
   return (
     <View>
+      <TouchableOpacity onPress={getScheduled}>
+        <Text>xxxxxxxxxxx</Text>
+      </TouchableOpacity>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
@@ -55,8 +67,8 @@ export default function ScheduledMoorings() {
           <MagnifierSvg style={styles.magnifierSvg} />
         </View>
         <TextInput style={styles.input} placeholder="   Buscar por Navio" />
-        <View style={styles.boxPlusSvg}>
-          <Plus style={styles.plusSvg} />
+        <View style={styles.boxFilterSvg}>
+          <FilterSvg style={styles.filterSvg} />
         </View>
         <View style={styles.boxDrop}>
           <DropDownPicker
@@ -83,19 +95,19 @@ export default function ScheduledMoorings() {
           <Text style={styles.textDataHour}>19:00/01:00</Text>
         </View>
         <View style={styles.boxesSituations}>
-          <View style={styles.boxSituation}></View>
+          <View style={styles.boxSituation} />
           <Text style={styles.textSituation}>Liberado</Text>
         </View>
-        <View style={styles.boxSituation}></View>
+        <View style={styles.boxSituation1} />
         <Text style={styles.textSituation}>Pendente</Text>
-        <View style={styles.boxSituation}></View>
+        <View style={styles.boxSituation2} />
         <Text style={styles.textSituation}>Análise</Text>
       </View>
       <View style={styles.container}>
         <View style={styles.containerCardInfo}>
           <View style={styles.boxSvg} />
           <View style={styles.textsInfo}>
-            <Text style={styles.cardTextLocal}>Local</Text>
+            <Text style={styles.cardTextLocal}>{infoScheduled.local}</Text>
 
             <Text style={styles.cardTextName}>Nome do Navio</Text>
             <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
