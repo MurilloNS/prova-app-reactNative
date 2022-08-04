@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, 
     ImageBackground, 
     Text, 
@@ -14,6 +14,12 @@ import LogoSvg from "../../../img/logo.svg";
 import AnchorSvg from "../../../img/icons/Anchor.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import FilterSvg from "../../../img/icons/Filter.svg";
+import ListAnchored from "../../components/ListAnchored";
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=fundeados",
+  });
 
 export default function AnchoredShips() {
 
@@ -24,6 +30,16 @@ export default function AnchoredShips() {
         { label: "Tipo de Carga", value: "Tipo de Carga" },
         { label: "Local do Navio", value: "Local do Navio" },
     ]);
+
+    const [ListAnchoredShips, setListAnchoredShips] = useState([]);
+
+    useEffect(() => {
+        api.get(axios.baseURL)
+        .then((response) => setListAnchoredShips(response.data))
+        .catch((err) => {
+          console.error("ops! Ocorreu um erro" + err.response.data);
+        });
+      }, []);
 
     return (
         <View>
@@ -71,36 +87,7 @@ export default function AnchoredShips() {
 
             </View>
 
-            <View style={styles.container}>
-                <View style={styles.containerCardInfo}>
-
-                    <View style={styles.boxSvg} />
-                    <View style={styles.textsInfo}>
-                        <Text style={styles.cardTextLocal}>Local</Text>
-                        <Text style={styles.cardTextName}>Nome do Navio</Text>
-                        <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
-
-                        <View style={styles.cardTextCargo}>
-                            <Text>Carga</Text>
-                            <Text>Descarga</Text>
-                        </View>
-                        <View style={styles.cardTextCargoValue}>
-                            <Text>00000</Text>
-                            <Text style={styles.valueUnload}>00000</Text>
-                        </View>
-
-                        <TouchableOpacity style={styles.Button}>
-                            <View style={styles.buttonDetails}>
-                                <Text style={styles.textButton}>Detalhes</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-
-
-                </View>
-
-
-            </View>
+      <ListAnchored list={ListAnchoredShips} />
         </View>
     );
 }

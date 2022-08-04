@@ -1,84 +1,8 @@
 import { StyleSheet } from "react-native";
 
-const style = StyleSheet.create({
-  photoHomepage: {
-    width: 411,
-    height: 149,
-  },
-  boxLogoSvg: {
-    height: "40%",
-    width: "30%",
-    marginLeft: 20,
-    flexDirection: "column",
-  },
-  boxAnchoredShipsSvg: {
-    height: "50%",
-    width: "20%",
-    marginLeft: "10%",
-    flexDirection: "row",
-  },
-  AnchoredShipsSvg: {
-    height: "100%",
-    width: "100%",
-  },
-  boxText: {
-    marginLeft: "40%",
-    marginTop: "-20%",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 31,
-    color: "#FFFFFF",
-    marginLeft: "-45%",
-    textShadowRadius: 15,
-    textShadowColor: "#000000",
-    textShadowOffset: { width: 1, height: 1 },
-  },
-  mainOptions: {
-    borderTopColor: "#04ADBF",
-    borderTopWidth: 3,
-    marginBottom: 15,
-    height: 70,
-    backgroundColor: "#E2E2E2",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  boxMagnifierSvg: {
-    height: "100%",
-    width: "15%",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  magnifierSvg: {
-    height: 35,
-    width: 35,
-  },
-  input: {
-    width: "40%",
-    height: 49,
-    borderRadius: 10,
-    backgroundColor: "#F6F6F6",
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    marginRight: "5%",
-  },
-  boxFilterSvg: {
-    height: "100%",
-    width: "10%",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  filterSvg: {
-    height: 35,
-    width: 35,
-  },
-  dropDown: {
-    borderRadius: 10,
-  },
-  boxDrop: {
-    width: "28%",
+const styles = StyleSheet.create({
+  flatList: {
+    marginBottom: "70%",
   },
   container: {
     height: "auto",
@@ -136,6 +60,9 @@ const style = StyleSheet.create({
     marginLeft: 45,
     justifyContent: "space-between",
   },
+  textDuv: {
+    marginRight: 33,
+  },
   cardTextCargoValue: {
     width: "65%",
     flexDirection: "row",
@@ -160,4 +87,4 @@ const style = StyleSheet.create({
     color: "#FFFFFF",
   },
 });
-export default style;
+export default styles;
