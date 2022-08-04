@@ -71,12 +71,12 @@ export default function Home({ navigation }) {
           <View style={styles.lastBoxSvg}>
             <MoneySvg style={styles.iconSvg} />
           </View>
-          <View style={styles.boxText}>
+          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("FinancialInfo")}>
             <Text style={styles.textListOptions}>Informações Financeiras</Text>
             <Text style={styles.text}>
               A SPA, Governança corporativa, Informações financeiras e mais
             </Text>
-          </View>
+            </TouchableOpacity>
         </View>
       </View>
       <SocialMediaSvgs />

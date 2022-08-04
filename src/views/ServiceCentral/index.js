@@ -6,6 +6,7 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 import IconPortSvg from "../../../img/icons/IconPort.svg"
+import CabecaSvg from "../../../img/icons/CabecaMenu.svg"
 
 export default function ServiceCentral() {
 
@@ -13,13 +14,17 @@ export default function ServiceCentral() {
     <View>
       <ImageBackground
         style={styles.photoHomepage}
-        source={require("../../../img/PhotoHomepage.jpg")}>
-        <View>
-          <LogoSvg style={styles.logoSvg} />
+        source={require("../../../img/PhotoHomepage.jpg")}
+      >
+        <View style={styles.boxLogoSvg}>
+          <LogoSvg />
+        </View>
+        <View style={styles.boxCabecaSvg}>
+          <CabecaSvg style={styles.cabecaSvg} />
         </View>
         <View style={styles.boxText}>
           <Text style={styles.text}>Central</Text>
-          <Text style={styles.text}>de Serviços</Text>
+          <Text style={styles.text}>de Serviço</Text>
         </View>
       </ImageBackground>
 

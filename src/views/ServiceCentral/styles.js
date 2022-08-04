@@ -1,16 +1,41 @@
 import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
-    photoHomepage:{
-        width: 411,
-        height: 149,
-    },
-    logoSvg:{
-        height: "40%",
-        width: "30%",
-        marginLeft: 20,
-        flexDirection: "row",
-    },
+  photoHomepage:{
+    width: 411,
+    height: 149,
+},
+boxLogoSvg:{
+    height: "40%",
+    width: "30%",
+    marginLeft: 20,
+},
+boxCabecaSvg:{
+   height: "50%",
+   width: "20%",
+   marginLeft: "10%",
+   flexDirection: "row",
+},
+cabecaSvg:{
+    height: "100%",
+    width: "100%",
+   
+},
+boxText:{
+    marginLeft: "40%",
+    marginTop: "-20%",
+    
+},
+text:{
+    fontSize: 31,
+    color: "#FFFFFF",
+    marginLeft: "-45%",
+    textShadowRadius: 15,
+    textShadowColor: "#000000",
+    textShadowOffset: { width: 1, height: 1 },
+    
+
+},
     mainOptions:{
         borderTopColor: "#04ADBF",
         borderTopWidth: 3,

@@ -6,6 +6,7 @@ const style = StyleSheet.create({
     photoHomepage:{
         width: 411,
         height: 149,
+        flexDirection: "row",
     },
     boxLogoSvg:{
         height: "40%",

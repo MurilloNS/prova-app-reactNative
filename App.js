@@ -8,6 +8,7 @@ import PortOperations from "./src/views/PortOperations";
 import ShipsInSantos from "./src/views/ShipsInSantos";
 import ServiceCentral from "./src/views/ServiceCentral";
 import DiscoverPort from "./src/views/DiscoverPort";
+import FinancialInfo from "./src/views/FinancialInfo";
 
 import Routes from "./src/routes";
 
@@ -24,6 +25,7 @@ export default function App() {
           <Stack.Screen name="ShipsInSantos" component={ShipsInSantos}/>
           <Stack.Screen name="ServiceCentral" component={ServiceCentral}/>
           <Stack.Screen name="DiscoverPort" component={DiscoverPort}/>
+          <Stack.Screen name="FinancialInfo" component={FinancialInfo}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
