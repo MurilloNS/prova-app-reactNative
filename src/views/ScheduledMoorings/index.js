@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  ImageBackground,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { View, ImageBackground, Text, TextInput } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
-import axios from "axios";
 
 import styles from "./styles";
 
@@ -15,9 +8,12 @@ import LogoSvg from "../../../img/logo.svg";
 import ClockSvg from "../../../img/icons/Clock.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import FilterSvg from "../../../img/icons/Filter.svg";
+import List from "../../components/List";
+import axios from "axios";
 
-const baseUrl =
-  "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2";
+const api = axios.create({
+  baseURL: "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2",
+});
 
 export default function ScheduledMoorings() {
   const [open, setOpen] = useState(false);
@@ -29,24 +25,19 @@ export default function ScheduledMoorings() {
     { label: "Aguardando", value: "aguardando" },
   ]);
 
-  const [infoScheduled, setInfoScheduled] = useState({});
+  const [listScheduled, setListScheduled] = useState([]);
+  const lista = [0, 1, 2, 3, 4, 5, 6];
 
-  const getScheduled = () => {
-    axios
-      .get(baseUrl)
-      .then((response) => {
-        alert(JSON.stringify(response.data));
-        setInfoScheduled(response);
-      })
-      .catch(function (error) {
-        alert(error.message);
-      });
-  };
+  useEffect(() => {
+    api.get(axios.baseURL)
+    .then((response) => setListScheduled(response.data))
+    .catch((err) => {
+      console.error("ops! Ocorreu um erro" + err.response.data);
+    });
+  }, []);
+
   return (
     <View>
-      <TouchableOpacity onPress={getScheduled}>
-        <Text>xxxxxxxxxxx</Text>
-      </TouchableOpacity>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
@@ -103,32 +94,8 @@ export default function ScheduledMoorings() {
         <View style={styles.boxSituation2} />
         <Text style={styles.textSituation}>Análise</Text>
       </View>
-      <View style={styles.container}>
-        <View style={styles.containerCardInfo}>
-          <View style={styles.boxSvg} />
-          <View style={styles.textsInfo}>
-            <Text style={styles.cardTextLocal}>{infoScheduled.local}</Text>
 
-            <Text style={styles.cardTextName}>Nome do Navio</Text>
-            <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
-
-            <View style={styles.cardTextCargo}>
-              <Text>Viagem</Text>
-              <Text style={styles.textDuv}>DUV</Text>
-            </View>
-            <View style={styles.cardTextCargoValue}>
-              <Text>00000</Text>
-              <Text style={styles.valueUnload}>00000</Text>
-            </View>
-
-            <TouchableOpacity style={styles.Button}>
-              <View style={styles.buttonDetails}>
-                <Text style={styles.textButton}>Detalhes</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+      <List list={listScheduled} />
     </View>
   );
 }
