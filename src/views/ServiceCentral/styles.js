@@ -10,30 +10,31 @@ boxLogoSvg:{
     width: "30%",
     marginLeft: 20,
 },
-boxCabecaSvg:{
-   height: "50%",
-   width: "20%",
-   marginLeft: "10%",
-   flexDirection: "row",
+boxTitle:{
+  flexDirection: "row",
+  height: 149,
 },
-cabecaSvg:{
-    height: "100%",
-    width: "100%",
-   
+boxCabecaSvg: {
+  height: "50%",
+  width: "20%",
+  marginLeft: "10%",
+  flexDirection: "row",
 },
-boxText:{
-    marginLeft: "40%",
-    marginTop: "-20%",
-    
+cabecaSvg: {
+  height: "100%",
+  width: "100%",
 },
-text:{
-    fontSize: 31,
-    color: "#FFFFFF",
-    marginLeft: "-45%",
-    textShadowRadius: 15,
-    textShadowColor: "#000000",
-    textShadowOffset: { width: 1, height: 1 },
-    
+boxTextCabeca: {
+  marginTop: "-3%",
+},
+textCabeca: {
+  fontSize: 31,
+  color: "#FFFFFF",
+  marginLeft: "10%",
+  textShadowRadius: 15,
+  textShadowColor: "#000",
+  textShadowOffset: { width: 1, height: 1 },
+  textAlign: "center",
 
 },
     mainOptions:{

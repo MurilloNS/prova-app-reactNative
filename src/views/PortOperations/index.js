@@ -29,8 +29,8 @@ export default function PortOperations() {
           <ShipSvg style={styles.shipSvg} />
         </View>
         <View style={styles.boxTextShips}>
-          <Text style={styles.textShip}>Atracações</Text>
-          <Text style={styles.textShip}>Programadas</Text>
+          <Text style={styles.textShip}>Operações</Text>
+          <Text style={styles.textShip}>Portuárias</Text>
         </View>
         </View>
       </ImageBackground>
