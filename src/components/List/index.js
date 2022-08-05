@@ -14,26 +14,40 @@ export default function List({ list }) {
           return (
             <View style={styles.container}>
               <View style={styles.containerCardInfo}>
-                <View style={styles.boxSvg} />
+                <View style={styles.boxSvgConfirmed} />
                 <View style={styles.textsInfo}>
                   <Text style={styles.cardTextLocal}>{item.local}</Text>
 
                   <Text style={styles.cardTextName}>{item.nomenavio}</Text>
-                  <Text style={styles.cardTextCargoType}>{item.mercadoria}</Text>
+                  <Text style={styles.cardTextCargoType}>
+                    {item.mercadoria}
+                  </Text>
 
                   <View style={styles.cardTextCargo}>
                     <Text>Viagem</Text>
                     <Text style={styles.textDuv}>DUV</Text>
                   </View>
                   <View style={styles.cardTextCargoValue}>
-                    <Text>{item.viagem}</Text>
-                    <Text style={styles.valueUnload}>{item.duv}</Text>
+                    <Text style={styles.firstValue}>{item.data}</Text>
+                    <Text style={styles.secondValue}>{item.duv}</Text>
+                  </View>
+                  <View style={styles.cardTextCargo2}>
+                    <Text>Data</Text>
+                    <Text style={styles.textDuv}>Hora</Text>
+                  </View>
+                  <View style={styles.cardTextCargoValue}>
+                    <Text style={styles.firstValue}>{item.viagem}</Text>
+                    <Text style={styles.secondValue}>{item.periodo}</Text>
+                  </View>
+                  <View style={styles.cardTextCargo3}>
+                    <Text>Manobra</Text>
+                  </View>
+                  <View style={styles.cardTextCargoValue}>
+                    <Text style={styles.firstValue}>{item.manobra}</Text>
                   </View>
 
-                  <TouchableOpacity style={styles.Button}>
-                    <View style={styles.buttonDetails}>
-                      <Text style={styles.textButton}>Detalhes</Text>
-                    </View>
+                  <TouchableOpacity style={styles.buttonDetails}>
+                    <Text style={styles.textButton}>Detalhes</Text>
                   </TouchableOpacity>
                 </View>
               </View>
