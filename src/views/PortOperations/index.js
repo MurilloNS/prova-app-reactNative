@@ -21,17 +21,18 @@ export default function PortOperations() {
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
       >
-        <View style={styles.logoSvg}>
-          <LogoSvg/>
-          <View style={styles.boxShipSvg}>
-            <ShipSvg style={styles.shipSvg}/>
-            <View style={styles.boxText}>
-          <Text style={styles.text}>Operações</Text>
-          <Text style={styles.text}>Portuárias</Text>
+        <View style={styles.boxLogoSvg}>
+          <LogoSvg />
         </View>
-          </View>
+        <View style={styles.boxTitle}>
+        <View style={styles.boxShipSvg}>
+          <ShipSvg style={styles.shipSvg} />
         </View>
-        
+        <View style={styles.boxTextShips}>
+          <Text style={styles.textShip}>Operações</Text>
+          <Text style={styles.textShip}>Portuárias</Text>
+        </View>
+        </View>
       </ImageBackground>
 
       <View style={styles.mainOptions} />

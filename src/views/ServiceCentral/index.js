@@ -19,12 +19,14 @@ export default function ServiceCentral() {
         <View style={styles.boxLogoSvg}>
           <LogoSvg />
         </View>
+        <View style={styles.boxTitle}>
         <View style={styles.boxCabecaSvg}>
           <CabecaSvg style={styles.cabecaSvg} />
         </View>
-        <View style={styles.boxText}>
-          <Text style={styles.text}>Central</Text>
-          <Text style={styles.text}>de Serviço</Text>
+        <View style={styles.boxTextCabeca}>
+          <Text style={styles.textCabeca}>Operações</Text>
+          <Text style={styles.textCabeca}>Portuárias</Text>
+        </View>
         </View>
       </ImageBackground>
 
