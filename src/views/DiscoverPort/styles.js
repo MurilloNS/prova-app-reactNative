@@ -5,11 +5,38 @@ const style = StyleSheet.create({
         width: 411,
         height: 149,
     },
-    logoSvg:{
+    boxLogoSvg:{
         height: "40%",
         width: "30%",
         marginLeft: 20,
         flexDirection: "row",
+    },
+    boxTitle:{
+      flexDirection: "row",
+      height: 149,
+    },
+    boxLocationSvg: {
+      height: "50%",
+      width: "20%",
+      marginLeft: "10%",
+      flexDirection: "row",
+    },
+    locationSvg: {
+      height: "100%",
+      width: "100%",
+    },
+    boxTextLocation: {
+      marginTop: "-3%",
+    },
+    textLocation: {
+      fontSize: 31,
+      color: "#FFFFFF",
+      marginLeft: "10%",
+      textShadowRadius: 15,
+      textShadowColor: "#000",
+      textShadowOffset: { width: 1, height: 1 },
+      textAlign: "center",
+
     },
     mainOptions:{
         borderTopColor: "#04ADBF",

@@ -17,16 +17,22 @@ export default function ServiceCentral() {
     return (
         <View>
             <ImageBackground
-                style={styles.photoHomepage}
-                source={require("../../../img/PhotoHomepage.jpg")}>
-                <View>
-                    <LogoSvg style={styles.logoSvg} />
-                </View>
-                <View style={styles.boxText}>
-                    <Text style={styles.text}>Conheça</Text>
-                    <Text style={styles.text}>o Porto</Text>
-                </View>
-            </ImageBackground>
+        style={styles.photoHomepage}
+        source={require("../../../img/PhotoHomepage.jpg")}
+      >
+        <View style={styles.boxLogoSvg}>
+          <LogoSvg />
+        </View>
+        <View style={styles.boxTitle}>
+        <View style={styles.boxLocationSvg}>
+          <LocationSvg style={styles.locationSvg} />
+        </View>
+        <View style={styles.boxTextLocation}>
+          <Text style={styles.textLocation}>Operações</Text>
+          <Text style={styles.textLocation}>Portuárias</Text>
+        </View>
+        </View>
+      </ImageBackground>
 
             <View style={styles.mainOptions} />
             <View style={styles.container}>
