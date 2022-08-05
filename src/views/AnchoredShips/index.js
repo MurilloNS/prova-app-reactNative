@@ -3,7 +3,8 @@ import { View,
     ImageBackground, 
     Text, 
     TouchableOpacity, 
-    TextInput 
+    TextInput,
+    Alert
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 
@@ -35,7 +36,14 @@ export default function AnchoredShips() {
 
     useEffect(() => {
         api.get(axios.baseURL)
-        .then((response) => setListAnchoredShips(response.data))
+        .then (function (response) {
+            for (let i = 0; i < Object.keys(response.data).length; i++) {
+                response.data[i].numero_viagem = response.data[i].numero_viagem.replace("<br>", "/");
+                response.data[i].mer_emb_desc = response.data[i].mer_emb_desc.replace("<br>", "");
+                response.data[i].navio = response.data[i].navio.replace(/<br>.*$/, "");
+            }
+            setListAnchoredShips(response.data)
+        })
         .catch((err) => {
           console.error("ops! Ocorreu um erro" + err.response.data);
         });
