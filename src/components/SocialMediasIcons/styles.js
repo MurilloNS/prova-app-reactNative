@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     marginLeft: "14%",
   },
   containerSocialMedias: {
-    marginTop: "20%",
+    marginTop: "7%",
   },
   socialMediaSvgs: {
     height: 25,
