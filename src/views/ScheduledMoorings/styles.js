@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   boxSituation2: {
     height: 18,
     width: 18,
-    backgroundColor: "#FFF",
+    backgroundColor: "#E6E6FA",
     marginLeft: 8,
   },
   textSituation: {

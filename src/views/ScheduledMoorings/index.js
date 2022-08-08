@@ -12,10 +12,28 @@ import List from "../../components/List";
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2",
+  baseURL:
+    "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2",
 });
 
 export default function ScheduledMoorings() {
+  
+  const [listScheduled, setListScheduled] = useState([]);
+  const [originalData, setOriginalData] = useState([]);
+  const lista = [0, 1, 2, 3, 4, 5, 6];
+  
+  useEffect(() => {
+    api
+    .get(axios.baseURL)
+    .then((response) => {
+      setOriginalData(response.data);
+      setListScheduled(response.data);
+    })
+    .catch((err) => {
+      console.error("ops! Ocorreu um erro" + err.response.data);
+    });
+  }, []);
+  
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -24,17 +42,10 @@ export default function ScheduledMoorings() {
     { label: "Pendente", value: "pendente" },
     { label: "Aguardando", value: "aguardando" },
   ]);
-
-  const [listScheduled, setListScheduled] = useState([]);
-  const lista = [0, 1, 2, 3, 4, 5, 6];
-
-  useEffect(() => {
-    api.get(axios.baseURL)
-    .then((response) => setListScheduled(response.data))
-    .catch((err) => {
-      console.error("ops! Ocorreu um erro" + err.response.data);
-    });
-  }, []);
+  function search(s) {
+    let arr = JSON.parse(JSON.stringify(originalData));
+    setListScheduled(arr.filter((d) => d.nomenavio.includes(s)));
+  }
 
   return (
     <View>
@@ -57,7 +68,12 @@ export default function ScheduledMoorings() {
         <View style={styles.boxMagnifierSvg}>
           <MagnifierSvg style={styles.magnifierSvg} />
         </View>
-        <TextInput style={styles.input} placeholder="   Buscar por Navio" />
+        <TextInput
+          style={styles.input}
+          placeholder="   Buscar por Navio"
+          onChangeText={(s) => search(s)}
+          autoCapitalize="characters"
+        />
         <View style={styles.boxFilterSvg}>
           <FilterSvg style={styles.filterSvg} />
         </View>

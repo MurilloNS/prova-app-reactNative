@@ -25,19 +25,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   boxSvgConfirmed: {
-    backgroundColor: "green",
+    backgroundColor: "#32CD32",
     height: "100%",
     width: "3%",
     borderTopLeftRadius: 10,
   },
   boxSvgPending: {
-    backgroundColor: "yellow",
+    backgroundColor: "#FFD700",
     height: "100%",
     width: "3%",
     borderTopLeftRadius: 10,
   },
-  boxSvganalysis: {
-    backgroundColor: "white",
+  boxSvgAnalysis: {
+    backgroundColor: "#E6E6FA",
     height: "100%",
     width: "3%",
     borderTopLeftRadius: 10,

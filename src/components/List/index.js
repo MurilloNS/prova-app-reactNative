@@ -14,7 +14,7 @@ export default function List({ list }) {
           return (
             <View style={styles.container}>
               <View style={styles.containerCardInfo}>
-                <View style={styles.boxSvgConfirmed} />
+                <View style={[(item.liberado) ? styles.boxSvgConfirmed : (item.analise) ? styles.boxSvgAnalysis : styles.boxSvgPending ]} />
                 <View style={styles.textsInfo}>
                   <Text style={styles.cardTextLocal}>{item.local}</Text>
 
