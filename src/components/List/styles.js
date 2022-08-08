@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   flatList: {
     marginBottom: "70%",
+    zIndex: -1,
   },
   container: {
     height: "auto",
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
   },
   containerCardInfo: {
     backgroundColor: "#FFFFFF",
-    height: 195,
+    height: 295,
     width: "90%",
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
@@ -23,15 +24,27 @@ const styles = StyleSheet.create({
     elevation: 4,
     marginTop: 10,
   },
-  boxSvg: {
-    backgroundColor: "#264775",
+  boxSvgConfirmed: {
+    backgroundColor: "green",
+    height: "100%",
+    width: "3%",
+    borderTopLeftRadius: 10,
+  },
+  boxSvgPending: {
+    backgroundColor: "yellow",
+    height: "100%",
+    width: "3%",
+    borderTopLeftRadius: 10,
+  },
+  boxSvganalysis: {
+    backgroundColor: "white",
     height: "100%",
     width: "3%",
     borderTopLeftRadius: 10,
   },
   cardTextLocal: {
     height: 28,
-    width: "40%",
+    width: "80%",
     fontSize: 15,
     marginLeft: 12,
     marginTop: 10,
@@ -40,7 +53,7 @@ const styles = StyleSheet.create({
   },
   cardTextName: {
     height: 28,
-    width: "65%",
+    width: "80%",
     fontSize: 20,
     marginLeft: 12,
     fontWeight: "bold",
@@ -48,32 +61,59 @@ const styles = StyleSheet.create({
   },
   cardTextCargoType: {
     height: 28,
-    width: "65%",
+    width: "80%",
     fontSize: 15,
     marginLeft: 12,
-    marginTop: 10,
+    marginTop: 5,
     color: "#393939",
   },
   cardTextCargo: {
     width: "65%",
     flexDirection: "row",
-    marginLeft: 45,
+    marginLeft: 25,
     justifyContent: "space-between",
   },
+  cardTextCargo2: {
+    width: "65%",
+    flexDirection: "row",
+    marginLeft: 25,
+    justifyContent: "space-between",
+    marginTop: 5,
+  },
+  cardTextCargo3: {
+    width: "65%",
+    flexDirection: "row",
+    marginLeft: 25,
+    justifyContent: "space-between",
+    marginTop: 5,
+  },
   textDuv: {
-    marginRight: 33,
+    marginRight: 40,
   },
   cardTextCargoValue: {
     width: "65%",
     flexDirection: "row",
-    marginLeft: 45,
+    marginLeft: 25,
     justifyContent: "space-between",
   },
-  valueUnload: {
-    marginRight: 20,
+  firstValue: {
+    width: 110,
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+  secondValue: {
+    marginLeft: 49,
+
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+  thirdValue: {
+    width: 100,
+    fontWeight: "bold",
+    fontSize: 15,
   },
   buttonDetails: {
-    marginTop: 10,
+    marginTop: 15,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
