@@ -15,13 +15,22 @@ export default function FinancialInfo() {
     return (
         <View>
             <ImageBackground
-                style={styles.photoHomepage}
-                source={require("../../../img/PhotoHomepage.jpg")}
-            >
-                <View>
-                    <LogoSvg style={styles.logoSvg} />
-                </View>
-            </ImageBackground>
+        style={styles.photoHomepage}
+        source={require("../../../img/PhotoHomepage.jpg")}
+      >
+        <View style={styles.boxLogoSvg}>
+          <LogoSvg />
+        </View>
+        <View style={styles.boxTitle}>
+        <View style={styles.boxMoneySvg}>
+          <MoneySvg style={styles.moneySvg} />
+        </View>
+        <View style={styles.boxTextMoney}>
+          <Text style={styles.textMoney}>Operações</Text>
+          <Text style={styles.textMoney}>Portuárias</Text>
+        </View>
+        </View>
+      </ImageBackground>
             <View style={styles.mainOptions} />
 
             <View style={styles.container}>

@@ -12,6 +12,33 @@ const styles = StyleSheet.create({
     marginBottom: -10,
     marginRight: -20,
   },
+  boxTitle:{
+    flexDirection: "row",
+    height: 149,
+  },
+  boxMoneySvg: {
+    height: "50%",
+    width: "20%",
+    marginLeft: "10%",
+    flexDirection: "row",
+  },
+  moneySvg: {
+    height: "100%",
+    width: "100%",
+  },
+  boxTextMoney: {
+    marginTop: "-3%",
+  },
+  textMoney: {
+    fontSize: 31,
+    color: "#FFFFFF",
+    marginLeft: "10%",
+    textShadowRadius: 15,
+    textShadowColor: "#000",
+    textShadowOffset: { width: 1, height: 1 },
+    textAlign: "center",
+
+  },
   mainOptions: {
     borderTopColor: "#04ADBF",
     borderTopWidth: 3,
