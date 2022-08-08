@@ -43,92 +43,86 @@ export default function PortOperations() {
       <View style={styles.mainOptions} />
 
       <View style={styles.container}>
-        <View style={styles.firstContainerListOption}>
+        <TouchableOpacity
+          style={styles.firstContainerListOption}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/navegacao-e-movimento-de-navios/"
+            )
+          }
+        >
           <View style={styles.firstBoxSvg}>
             <CompassSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity
-            style={styles.boxText}
-            onPress={() =>
-              Linking.openURL(
-                "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/navegacao-e-movimento-de-navios/"
-              )
-            }
-          >
+          <TouchableOpacity style={styles.boxText}>
             <Text style={styles.textListOptions}>Navegação e Movimento</Text>
             <Text style={styles.text}>Navegação e Movimentação de navios</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.containerListOptions}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containerListOptions}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/calados-operacionais-dos-bercos-de-atracacao/"
+            )
+          }
+        >
           <View style={styles.boxSvg}>
             <CaladoSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity
-            style={styles.boxText}
-            onPress={() =>
-              Linking.openURL(
-                "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/calados-operacionais-dos-bercos-de-atracacao/"
-              )
-            }
-          >
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Calado Máximo</Text>
             <Text style={styles.text}>Calado Máximo Operacional</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.containerListOptions}>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containerListOptions}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/pranchas-minimas-operacionais/"
+            )
+          }
+        >
           <View style={styles.boxSvg}>
             <PranchaSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
-            <Text
-              style={styles.textListOptions}
-              onPress={() =>
-                Linking.openURL(
-                  "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/pranchas-minimas-operacionais/"
-                )
-              }
-            >
-              Prancha Operacional
-            </Text>
+          <View style={styles.boxText}>
+            <Text style={styles.textListOptions}>Prancha Operacional</Text>
             <Text style={styles.text}>Prancha Operacional</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.containerListOptions}>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containerListOptions}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/bercos-de-atracacao/"
+            )
+          }
+        >
           <View style={styles.boxSvg}>
             <BercosSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
-            <Text
-              style={styles.textListOptions}
-              onPress={() =>
-                Linking.openURL(
-                  "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/bercos-de-atracacao/"
-                )
-              }
-            >
-              Berços de Atracação
-            </Text>
+          <View style={styles.boxText}>
+            <Text style={styles.textListOptions}>Berços de Atracação</Text>
             <Text style={styles.text}>Berços de Atracação</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.lastContainerListOptions}>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.lastContainerListOptions}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/areas-de-fundeio/"
+            )
+          }
+        >
           <View style={styles.lastBoxSvg}>
             <FundeioSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
-            <Text
-              style={styles.textListOptions}
-              onPress={() =>
-                Linking.openURL(
-                  "https://www.portodesantos.com.br/informacoes-operacionais/operacoes-portuarias/areas-de-fundeio/"
-                )
-              }
-            >
-              Áreas de Fundeio
-            </Text>
+          <View style={styles.boxText}>
+            <Text style={styles.textListOptions}>Áreas de Fundeio</Text>
             <Text style={styles.text}>Áreas de Fundeio</Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
       <SocialMediaSvgs />
     </View>

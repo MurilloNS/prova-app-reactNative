@@ -28,23 +28,23 @@ export default function ServiceCentral() {
           <LocationSvg style={styles.locationSvg} />
         </View>
         <View style={styles.boxTextLocation}>
-          <Text style={styles.textLocation}>Operações</Text>
-          <Text style={styles.textLocation}>Portuárias</Text>
+          <Text style={styles.textLocation}>Conheça</Text>
+          <Text style={styles.textLocation}>o Porto</Text>
         </View>
         </View>
       </ImageBackground>
 
             <View style={styles.mainOptions} />
             <View style={styles.container}>
-                <View style={styles.firstContainerListOption}>
+                <TouchableOpacity style={styles.firstContainerListOption}>
                     <View style={styles.firstBoxSvg}>
                         <BookSvg style={styles.iconSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>História</Text>
                         <Text style={styles.text}>Conheça a história do Porto de Santos</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.containerListOptions}>
                     <View style={styles.boxSvg}>
                         <IconComplexSvg style={styles.iconDifSvg} />
