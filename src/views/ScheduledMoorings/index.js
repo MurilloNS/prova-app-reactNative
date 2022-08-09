@@ -17,23 +17,22 @@ const api = axios.create({
 });
 
 export default function ScheduledMoorings() {
-  
   const [listScheduled, setListScheduled] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const lista = [0, 1, 2, 3, 4, 5, 6];
-  
+
   useEffect(() => {
     api
-    .get(axios.baseURL)
-    .then((response) => {
-      setOriginalData(response.data);
-      setListScheduled(response.data);
-    })
-    .catch((err) => {
-      console.error("ops! Ocorreu um erro" + err.response.data);
-    });
+      .get(axios.baseURL)
+      .then((response) => {
+        setOriginalData(response.data);
+        setListScheduled(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! Ocorreu um erro" + err.response.data);
+      });
   }, []);
-  
+
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -70,7 +69,7 @@ export default function ScheduledMoorings() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="   Buscar por Navio"
+          placeholder="Buscar por Navio"
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />

@@ -11,9 +11,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: -1,
   },
-  containerCardInfo: {
+  containerCardInfoOpened: {
     backgroundColor: "#FFFFFF",
-    height: 295,
+    height: 290,
+    width: "90%",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    flexDirection: "row",
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    elevation: 4,
+    marginTop: 10,
+  },
+  containerCardInfoClosed: {
+    backgroundColor: "#FFFFFF",
+    height: 200,
     width: "90%",
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
@@ -87,8 +100,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 5,
   },
-  textDuv: {
+  textDuvOpened: {
     marginRight: 40,
+  },
+  textDuvClosed: {
+    marginRight: 33,
   },
   cardTextCargoValue: {
     width: "65%",
