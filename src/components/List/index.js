@@ -16,7 +16,7 @@ export default function List({ list }) {
             <View style={styles.container}>
               <View
                 style={[
-                  show
+                  (show == item)
                     ? styles.containerCardInfoOpened
                     : styles.containerCardInfoClosed,
                 ]}
@@ -42,7 +42,7 @@ export default function List({ list }) {
                     <Text>Viagem</Text>
                     <Text
                       style={[
-                        show ? styles.textDuvOpened : styles.textDuvClosed,
+                        (show == item) ? styles.textDuvOpened : styles.textDuvClosed,
                       ]}
                     >
                       DUV
@@ -52,7 +52,7 @@ export default function List({ list }) {
                     <Text style={styles.firstValue}>{item.viagem}</Text>
                     <Text style={styles.secondValue}>{item.duv}</Text>
                   </View>
-                  {show && (
+                  {show == item && (
                     <View>
                       <View style={styles.cardTextCargo2}>
                         <Text>Data</Text>
@@ -79,7 +79,7 @@ export default function List({ list }) {
 
                   <TouchableOpacity
                     style={styles.buttonDetails}
-                    onPress={() => setShow(!show)}
+                    onPress={() => setShow(item)}
                   >
                     <Text style={styles.textButton}>Detalhes</Text>
                   </TouchableOpacity>
