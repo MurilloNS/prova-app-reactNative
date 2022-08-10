@@ -1,13 +1,33 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  RefreshControl,
+} from "react-native";
 
 import styles from "./styles";
 
 export default function List({ list }) {
   const [show, setShow] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const wait = (timeout) => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+  }
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
   return (
     <>
       <FlatList
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         style={styles.flatList}
         data={list}
         keyExtractor={(item, index) => `${index}`}
@@ -16,7 +36,7 @@ export default function List({ list }) {
             <View style={styles.container}>
               <View
                 style={[
-                  (show == item)
+                  show == item
                     ? styles.containerCardInfoOpened
                     : styles.containerCardInfoClosed,
                 ]}
@@ -42,7 +62,9 @@ export default function List({ list }) {
                     <Text>Viagem</Text>
                     <Text
                       style={[
-                        (show == item) ? styles.textDuvOpened : styles.textDuvClosed,
+                        show == item
+                          ? styles.textDuvOpened
+                          : styles.textDuvClosed,
                       ]}
                     >
                       DUV
