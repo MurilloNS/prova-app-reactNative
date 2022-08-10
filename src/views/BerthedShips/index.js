@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, 
-  ImageBackground, 
-  Text, 
-  TouchableOpacity, 
-  TextInput 
+import {
+  View,
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+  TextInput
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 
@@ -28,18 +29,25 @@ export default function BerthedShips() {
     { label: "Tipo de Carga", value: "Tipo de Carga" },
     { label: "Local do Navio", value: "Local do Navio" },
   ]);
-
+  const [originalData, setOriginalData] = useState([]);
   const [ListBerthedShips, setListBerthedShips] = useState([]);
 
   useEffect(() => {
     api.get(axios.baseURL)
-    .then((response) => setListBerthedShips(response.data))
-    .catch((err) => {
-      console.error("ops! Ocorreu um erro" + err.response.data);
-    });
+      
+      .then((response) => {
+        setOriginalData(response.data);
+        setListBerthedShips(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! Ocorreu um erro" + err.response.data);
+      });
   }, []);
-  
 
+  function search(s) {
+    let arr = JSON.parse(JSON.stringify(originalData));
+    setListBerthedShips(arr.filter((d) => d.nomenavio.includes(s) || d.descricao_local.includes(s)));
+  }
 
   return (
     <View>
@@ -62,7 +70,12 @@ export default function BerthedShips() {
         <View style={styles.boxMagnifierSvg}>
           <MagnifierSvg style={styles.magnifierSvg} />
         </View>
-        <TextInput style={styles.input} placeholder="   Buscar por Navio" />
+        <TextInput
+          style={styles.input}
+          placeholder="Buscar por Navio"
+          onChangeText={(s) => search(s)}
+          autoCapitalize="characters"
+        />
         <View style={styles.boxFilterSvg}>
           <FilterSvg style={styles.filterSvg} />
         </View>
@@ -83,7 +96,7 @@ export default function BerthedShips() {
             }}
           />
         </View>
-      </View>      
+      </View>
       <ListBerthed list={ListBerthedShips} />
     </View>
   );

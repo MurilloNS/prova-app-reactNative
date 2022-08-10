@@ -3,19 +3,18 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   flatList: {
     marginBottom: "70%",
+    zIndex: -1,
   },
   container: {
     height: "auto",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: -1,
   },
   containerCardInfo: {
     backgroundColor: "#FFFFFF",
-    height: 195,
+    height: 160,
     width: "90%",
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
+    borderRadius: 10,
     flexDirection: "row",
     shadowColor: "#000000",
     shadowOffset: { width: 0, height: 1 },
@@ -28,6 +27,7 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "3%",
     borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
   },
   cardTextLocal: {
     height: 28,
@@ -57,34 +57,28 @@ const styles = StyleSheet.create({
   cardTextCargo: {
     width: "65%",
     flexDirection: "row",
-    marginLeft: 45,
+    marginLeft: 25,
     justifyContent: "space-between",
   },
+  /*
   textUnload: {
-    marginRight: 33,
-  },
+    marginRight: 5,
+  },*/
   cardTextCargoValue: {
     width: "65%",
     flexDirection: "row",
-    marginLeft: 45,
-    justifyContent: "space-between",
+    marginLeft: 25,
+  },
+  valueLoad: {
+    width: 110,
+    fontWeight: "bold",
+    fontSize: 15,
+    alignContent: "flex-start",
   },
   valueUnload: {
-    marginRight: 20,
-  },
-  buttonDetails: {
-    marginTop: 10,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: "12%",
-    height: 27,
-    width: "60%",
-    backgroundColor: "#264775",
-    borderRadius: 10,
-  },
-  textButton: {
-    color: "#FFFFFF",
+    marginLeft: 60,
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });
 export default styles;

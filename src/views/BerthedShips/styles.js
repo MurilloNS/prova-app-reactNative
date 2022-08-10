@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderBottomWidth: 1,
         marginRight: "5%",
+        paddingLeft: 10,
     },
     boxFilterSvg: {
         height: "100%",
@@ -89,8 +90,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFFFFF",
         height: 195,
         width: "90%",
-        borderTopRightRadius: 10,
-        borderTopLeftRadius: 10,
+        borderRadius: 10,
         flexDirection: "row",
         shadowColor: "#000000",
         shadowOffset: { width: 0, height: 1 },
@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
         height: "100%",
         width: "3%",
         borderTopLeftRadius: 10,
-        
     },
     cardTextLocal: {
         height: 28,
