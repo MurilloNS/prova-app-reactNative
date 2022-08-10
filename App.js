@@ -18,14 +18,38 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Home" component={Routes} />
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Routes}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Programados" component={ScheduledMoorings} />
-          <Stack.Screen name="PortOperations" component={PortOperations}/>
-          <Stack.Screen name="ShipsInSantos" component={ShipsInSantos}/>
-          <Stack.Screen name="ServiceCentral" component={ServiceCentral}/>
-          <Stack.Screen name="DiscoverPort" component={DiscoverPort}/>
-          <Stack.Screen name="FinancialInfo" component={FinancialInfo}/>
+          <Stack.Screen
+            name="PortOperations"
+            component={PortOperations}
+            options={{ title: "Operações Portuárias" }}
+          />
+          <Stack.Screen
+            name="ShipsInSantos"
+            component={ShipsInSantos}
+            options={{ title: "Navios em Santos"}}
+          />
+          <Stack.Screen
+            name="ServiceCentral"
+            component={ServiceCentral}
+            options={{ title: "Central de Serviços" }}
+          />
+          <Stack.Screen
+            name="DiscoverPort"
+            component={DiscoverPort}
+            options={{ title: "Conheça o Porto" }}
+          />
+          <Stack.Screen
+            name="FinancialInfo"
+            component={FinancialInfo}
+            options={{ title: "Informações Financeiras" }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

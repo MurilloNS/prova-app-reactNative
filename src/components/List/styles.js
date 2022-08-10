@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     height: "auto",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: -1,
   },
   containerCardInfoOpened: {
     backgroundColor: "#FFFFFF",

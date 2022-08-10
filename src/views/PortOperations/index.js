@@ -54,10 +54,10 @@ export default function PortOperations() {
           <View style={styles.firstBoxSvg}>
             <CompassSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Navegação e Movimento</Text>
             <Text style={styles.text}>Navegação e Movimentação de navios</Text>
-          </TouchableOpacity>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.containerListOptions}
