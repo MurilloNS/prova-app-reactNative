@@ -63,6 +63,7 @@ const style = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     marginRight: "5%",
+    paddingLeft: 10,
   },
   boxFilterSvg: {
     height: "100%",

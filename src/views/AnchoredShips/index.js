@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, 
-    ImageBackground, 
-    Text, 
-    TouchableOpacity, 
-    TextInput,
-    Alert
-} from "react-native";
+import { View, ImageBackground, Text, TextInput } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 
 import styles from "./styles";
@@ -33,6 +27,7 @@ export default function AnchoredShips() {
     ]);
 
     const [ListAnchoredShips, setListAnchoredShips] = useState([]);
+    const [originalData, setOriginalData] = useState([]);
 
     useEffect(() => {
         api.get(axios.baseURL)
@@ -42,12 +37,18 @@ export default function AnchoredShips() {
                 response.data[i].mer_emb_desc = response.data[i].mer_emb_desc.replace("<br>", "");
                 response.data[i].navio = response.data[i].navio.replace(/<br>.*$/, "");
             }
-            setListAnchoredShips(response.data)
+            setOriginalData(response.data);
+            setListAnchoredShips(response.data);
         })
         .catch((err) => {
           console.error("ops! Ocorreu um erro" + err.response.data);
         });
       }, []);
+
+      function search(s) {
+        let arr = JSON.parse (JSON.stringify(originalData));
+        setListAnchoredShips(arr.filter((d) => d.navio.includes(s) ));
+      }
 
     return (
         <View>
@@ -70,7 +71,12 @@ export default function AnchoredShips() {
                 <View style={styles.boxMagnifierSvg}>
                     <MagnifierSvg style={styles.magnifierSvg} />
                 </View>
-                <TextInput style={styles.input} placeholder="   Buscar por Navio" />
+                <TextInput 
+                style={styles.input} 
+                placeholder="Buscar por Navio"
+                onChangeText={(s) => search(s)}
+                autoCapitalize="characters"
+                />
 
                 <View style={styles.boxFilterSvg}>
                     <FilterSvg style={styles.filterSvg} />
