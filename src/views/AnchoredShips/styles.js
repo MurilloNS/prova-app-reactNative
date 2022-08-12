@@ -37,7 +37,6 @@ const style = StyleSheet.create({
   mainOptions: {
     borderTopColor: "#04ADBF",
     borderTopWidth: 3,
-    marginBottom: 15,
     height: 70,
     backgroundColor: "#E2E2E2",
     flexDirection: "row",
@@ -50,12 +49,12 @@ const style = StyleSheet.create({
     alignItems: "center",
   },
   magnifierSvg: {
-    height: 35,
-    width: 35,
+    height: 30,
+    width: 30,
   },
   input: {
-    width: "40%",
-    height: 49,
+    width: "80%",
+    height: 40,
     borderRadius: 10,
     backgroundColor: "#F6F6F6",
     borderLeftWidth: 1,

@@ -12,7 +12,6 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import RopeSvg from "../../../img/icons/Rope.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
-import FilterSvg from "../../../img/icons/Filter.svg";
 import ListBerthed from "../../components/ListBerthed";
 import axios from "axios";
 
@@ -35,6 +34,9 @@ export default function BerthedShips() {
     api.get(axios.baseURL)
       
       .then((response) => {
+        for (let i = 0; i < Object.keys(response.data).length; i++) {
+          response.data[i].descarga = response.data[i].descarga.toString();
+      }
         setOriginalData(response.data);
         setListBerthedShips(response.data);
       })
@@ -45,7 +47,7 @@ export default function BerthedShips() {
 
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListBerthedShips(arr.filter((d) => d.nomenavio.includes(s) || d.descricao_local.includes(s)));
+    setListBerthedShips(arr.filter((d) => d.nomenavio.includes(s) || d.descricao_local.includes(s) || d.descarga.includes(s)));
   }
 
   return (

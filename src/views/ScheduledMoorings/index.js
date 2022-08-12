@@ -25,6 +25,10 @@ export default function ScheduledMoorings() {
     api
       .get(axios.baseURL)
       .then((response) => {
+        for (let i = 0; i < Object.keys(response.data).length; i++) {
+          response.data[i].viagem = response.data[i].viagem.toString();
+          response.data[i].duv = response.data[i].duv.toString();
+        }
         setOriginalData(response.data);
         setListScheduled(response.data);
       })
@@ -38,7 +42,7 @@ export default function ScheduledMoorings() {
 
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.viagem.includes(s)));
+    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.viagem.includes(s) || d.duv.includes(s)));
   }
 
   return (
