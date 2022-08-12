@@ -3,7 +3,6 @@ import {
   View,
   ImageBackground,
   Text,
-  TouchableOpacity,
   TextInput
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -72,30 +71,10 @@ export default function BerthedShips() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Buscar por Navio"
+          placeholder="Buscar por Navio ou Local"
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />
-        <View style={styles.boxFilterSvg}>
-          <FilterSvg style={styles.filterSvg} />
-        </View>
-        <View style={styles.boxDrop}>
-          <DropDownPicker
-            style={styles.dropDown}
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-            showArrowIcon={false}
-            placeholder="Filtrar"
-            showTickIcon={false}
-            selectedItemContainerStyle={{
-              backgroundColor: "#DCDCDC",
-            }}
-          />
-        </View>
       </View>
       <ListBerthed list={ListBerthedShips} />
     </View>

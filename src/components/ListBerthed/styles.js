@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  flatList: {
-    marginBottom: "70%",
-    zIndex: -1,
-  },
   container: {
     height: "auto",
     justifyContent: "center",
@@ -31,7 +27,7 @@ const styles = StyleSheet.create({
   },
   cardTextLocal: {
     height: 28,
-    width: "40%",
+    width: "80%",
     fontSize: 15,
     marginLeft: 12,
     marginTop: 10,
@@ -40,15 +36,15 @@ const styles = StyleSheet.create({
   },
   cardTextName: {
     height: 28,
-    width: "65%",
+    width: "80%",
     fontSize: 20,
     marginLeft: 12,
     fontWeight: "bold",
     color: "#393939",
   },
   cardTextCargoType: {
-    height: 28,
-    width: "65%",
+    height: 34,
+    width: "80%",
     fontSize: 15,
     marginLeft: 12,
     marginTop: 10,

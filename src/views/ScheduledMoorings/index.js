@@ -38,7 +38,7 @@ export default function ScheduledMoorings() {
 
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.duv.includes(s) || d.viagem.includes(s) || d.mercadoria.includes(s)));
+    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.viagem.includes(s)));
   }
 
   return (
@@ -64,7 +64,7 @@ export default function ScheduledMoorings() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Buscar por Navio, DUV ou Viagens"
+          placeholder="Buscar por Navio ou Viagem"
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />

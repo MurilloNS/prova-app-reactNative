@@ -24,62 +24,65 @@ export default function Home({ navigation }) {
       </ImageBackground>
 
       <View style={styles.mainOptions} />
-
+      
       <View style={styles.container}>
-        <View style={styles.firstContainerListOption}>
+        <TouchableOpacity style={styles.firstContainerListOption} onPress={() => navigation.navigate("ShipsInSantos")}>
           <View style={styles.firstBoxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ShipsInSantos")}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Navios em Santos</Text>
             <Text style={styles.text}>Navios que estão na região portuária.</Text>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.containerListOptions}>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.containerListOptions} onPress={() => navigation.navigate("PortOperations")}>
           <View style={styles.boxSvg}>
             <ShipSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("PortOperations")}>
+          <View style={styles.boxText} >
             <Text style={styles.textListOptions}>Operações Portuárias</Text>
             <Text style={styles.text}>Navegação e Movimentação de navios</Text>
-            </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.containerListOptions}>
+        <TouchableOpacity style={styles.containerListOptions} onPress={() => navigation.navigate("ServiceCentral")}>
           <View style={styles.boxSvg}>
             <CabecaSvg style={styles.iconCabecaSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("ServiceCentral")}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Central de Serviços</Text>
             <Text style={styles.text}>Principais serviços do Porto</Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.containerListOptions}>
+        <TouchableOpacity style={styles.containerListOptions} onPress={() => navigation.navigate("DiscoverPort")}>
           <View style={styles.boxSvg}>
             <LocationSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("DiscoverPort")}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Conheça o Porto</Text>
             <Text style={styles.text}>
               Conheça o complexo portuário, sua história e mais
             </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.lastContainerListOptions}>
+        <TouchableOpacity style={styles.lastContainerListOptions} onPress={() => navigation.navigate("FinancialInfo")}>
           <View style={styles.lastBoxSvg}>
             <MoneySvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText} onPress={() => navigation.navigate("FinancialInfo")}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Informações Financeiras</Text>
             <Text style={styles.text}>
               A SPA, Governança corporativa, Informações financeiras e mais
             </Text>
-            </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
+
       <SocialMediaSvgs />
+
     </View>
   );
 }

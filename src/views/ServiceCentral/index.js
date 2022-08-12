@@ -24,8 +24,8 @@ export default function ServiceCentral() {
           <CabecaSvg style={styles.cabecaSvg} />
         </View>
         <View style={styles.boxTextCabeca}>
-          <Text style={styles.textCabeca}>Operações</Text>
-          <Text style={styles.textCabeca}>Portuárias</Text>
+          <Text style={styles.textCabeca}>Central de</Text>
+          <Text style={styles.textCabeca}>Serviços</Text>
         </View>
         </View>
       </ImageBackground>
