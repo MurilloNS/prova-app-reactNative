@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   magnifierSvg: {
-    height: 35,
-    width: 35,
+    height: 30,
+    width: 30,
   },
   input: {
-    width: "40%",
-    height: 49,
+    width: "80%",
+    height: 40,
     borderRadius: 10,
     backgroundColor: "#F6F6F6",
     borderLeftWidth: 1,
@@ -66,23 +66,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     marginRight: "5%",
-    paddingLeft: 10
-  },
-  boxFilterSvg: {
-    height: "100%",
-    width: "10%",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  filterSvg: {
-    height: 35,
-    width: 35,
-  },
-  dropDown: {
-    borderRadius: 10,
-  },
-  boxDrop: {
-    width: "28%",
+    paddingLeft: 10,
   },
   situations: {
     width: "100%",

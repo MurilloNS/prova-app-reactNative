@@ -35,15 +35,10 @@ export default function ScheduledMoorings() {
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    { label: "Todos", value: "todos" },
-    { label: "Liberado", value: "liberado" },
-    { label: "Pendente", value: "pendente" },
-    { label: "Aguardando", value: "aguardando" },
-  ]);
+
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListScheduled(arr.filter((d) => d.nomenavio.includes(s)));
+    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.duv.includes(s) || d.viagem.includes(s) || d.mercadoria.includes(s)));
   }
 
   return (
@@ -69,30 +64,10 @@ export default function ScheduledMoorings() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Buscar por Navio"
+          placeholder="Buscar por Navio, DUV ou Viagens"
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />
-        <View style={styles.boxFilterSvg}>
-          <FilterSvg style={styles.filterSvg} />
-        </View>
-        <View style={styles.boxDrop}>
-          <DropDownPicker
-            style={styles.dropDown}
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-            showArrowIcon={false}
-            showTickIcon={false}
-            placeholder="Filtrar"
-            selectedItemContainerStyle={{
-              backgroundColor: "#DCDCDC",
-            }}
-          />
-        </View>
       </View>
 
       <View style={styles.situations}>
