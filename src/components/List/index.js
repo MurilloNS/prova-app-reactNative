@@ -14,8 +14,8 @@ export default function List({ list }) {
   const [refreshing, setRefreshing] = useState(false);
 
   const wait = (timeout) => {
-    return new Promise(resolve => setTimeout(resolve, timeout));
-  }
+    return new Promise((resolve) => setTimeout(resolve, timeout));
+  };
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -50,12 +50,15 @@ export default function List({ list }) {
                       : styles.boxSvgAnalysis,
                   ]}
                 />
-                <View style={styles.textsInfo}>
-                  <Text style={styles.cardTextLocal}>{item.local}</Text>
+                <View>
+                  <View style={styles.textsInfo}>
+                    <Text style={styles.cardTextLocal}>{item.local}</Text>
+                    <Text style={styles.cardTextManobra}>{item.manobra}</Text>
+                  </View>
 
                   <Text style={styles.cardTextName}>{item.nomenavio}</Text>
                   <Text style={styles.cardTextCargoType}>
-                    {item.mercadoria}
+                    {item.data} - {item.periodo}
                   </Text>
 
                   <View style={styles.cardTextCargo}>
@@ -77,24 +80,10 @@ export default function List({ list }) {
                   {show == item && (
                     <View>
                       <View style={styles.cardTextCargo2}>
-                        <Text>Data</Text>
-                        <Text
-                          style={[
-                            show ? styles.textDuvOpened : styles.textDuvClosed,
-                          ]}
-                        >
-                          Hora
-                        </Text>
+                        <Text>Carga</Text>
                       </View>
                       <View style={styles.cardTextCargoValue}>
-                        <Text style={styles.firstValue}>{item.data}</Text>
-                        <Text style={styles.secondValue}>{item.periodo}</Text>
-                      </View>
-                      <View style={styles.cardTextCargo3}>
-                        <Text>Manobra</Text>
-                      </View>
-                      <View style={styles.cardTextCargoValue}>
-                        <Text style={styles.firstValue}>{item.manobra}</Text>
+                        <Text style={styles.cargaValue}>{item.mercadoria}</Text>
                       </View>
                     </View>
                   )}

@@ -74,16 +74,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#264775",
     flexDirection: "row",
     alignItems: "center",
-    zIndex: -1,
-  },
-  dataHour: {},
-  textDataHour: {
-    color: "#FFF",
-    fontWeight: "bold",
-    fontSize: 14,
+
   },
   boxesSituations: {
-    marginLeft: "5%",
+    marginLeft: "7%",
     flexDirection: "row",
   },
   boxSituation: {
@@ -97,12 +91,14 @@ const styles = StyleSheet.create({
     width: 18,
     backgroundColor: "#FFD700",
     marginLeft: 8,
+    marginLeft: "10%"
   },
   boxSituation2: {
     height: 18,
     width: 18,
     backgroundColor: "#E6E6FA",
     marginLeft: 8,
+    marginLeft: "10%"
   },
   textSituation: {
     color: "#FFF",

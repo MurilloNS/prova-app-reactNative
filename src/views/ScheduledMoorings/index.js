@@ -68,17 +68,13 @@ export default function ScheduledMoorings() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Buscar por Navio ou Viagem"
+          placeholder="Buscar..."
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />
       </View>
 
       <View style={styles.situations}>
-        <View style={styles.dataHour}>
-          <Text style={styles.textDataHour}>15/07/2022</Text>
-          <Text style={styles.textDataHour}>19:00/01:00</Text>
-        </View>
         <View style={styles.boxesSituations}>
           <View style={styles.boxSituation} />
           <Text style={styles.textSituation}>Liberado</Text>

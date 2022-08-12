@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   containerCardInfoOpened: {
     backgroundColor: "#FFFFFF",
-    height: 290,
+    height: 260,
     width: "90%",
     borderRadius: 10,
     flexDirection: "row",
@@ -57,12 +57,22 @@ const styles = StyleSheet.create({
   },
   cardTextLocal: {
     height: 28,
-    width: "80%",
+    width: "50%",
     fontSize: 15,
     marginLeft: 12,
     marginTop: 10,
     color: "#264775",
     fontWeight: "bold",
+
+  },
+  cardTextManobra: {
+    height: 28,
+    width: "50%",
+    fontSize: 12,
+    marginLeft: 20,
+    marginTop: 13,
+    fontWeight: "bold",
+
   },
   cardTextName: {
     height: 28,
@@ -72,6 +82,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#393939",
   },
+  textsInfo: {
+    flexDirection: "row"
+  },
   cardTextCargoType: {
     height: 28,
     width: "80%",
@@ -79,6 +92,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     marginTop: 5,
     color: "#393939",
+    fontWeight: "bold",
   },
   cardTextCargo: {
     width: "65%",
@@ -101,10 +115,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   textDuvOpened: {
-    marginRight: 40,
+    marginRight: 45,
   },
   textDuvClosed: {
-    marginRight: 33,
+    marginRight: 45,
   },
   cardTextCargoValue: {
     width: "65%",
@@ -117,9 +131,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 15,
   },
+  cargaValue: {
+    width: 250,
+    fontWeight: "bold",
+    fontSize: 15,
+  },
   secondValue: {
     marginLeft: 49,
-
     fontWeight: "bold",
     fontSize: 15,
   },
