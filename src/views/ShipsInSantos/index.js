@@ -1,110 +1,107 @@
-import React, {useState } from "react";
-import { View,
-     Text, 
-     ImageBackground, 
-     TouchableOpacity,
-     TextInput
-     } from "react-native";
-     import DropDownPicker from "react-native-dropdown-picker";
+import React, { useState, useEffect } from "react";
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    ActivityIndicator,
+} from "react-native";
 
 import styles from "./styles";
-
-import LogoSvg from "../../../img/logo.svg";
-import IconPortSvg from "../../../img/icons/IconPort.svg";
-import MagnifierSvg from "../../../img/icons/Magnifier.svg";
-import FilterSvg from "../../../img/icons/Filter.svg";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 
+import Clock from "../../../img/icons/Clock2.svg";
+import Rope from "../../../img/icons/Rope2.svg";
+import Anchor from "../../../img/icons/Anchor2.svg";
+import Boat from "../../../img/icons/Boat.svg";
+import axios from "axios";
 
-export default function ShipsInSantos(){
+const apiScheduled = axios.create({
+    baseURL:
+        "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2",
+});
+const apiBerthed = axios.create({
+    baseURL:
+        "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=atracados",
+});
+const apiAnchored = axios.create({
+    baseURL:
+        "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=fundeados",
+});
+const apiPassengers = axios.create({
+    baseURL:
+        "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=passageiros",
+});
 
-    const [open, setOpen] = useState (false);
-    const [value, setValue] = useState (null);
-    const [items, setItems] = useState ([
-        {label: "Todos", value: "Todos"},
-        {label: "Liberado", value: "Liberado"},
-        {label: "Pendente", value: "Pendente"},
-        {label: "Aguardando", value: "Aguardando"},
-        {label: "Tipo de Carga", value: "Tipo de Carga"},
-        {label: "Local do Navio", value: "Local do Navio"}
-    ])
+export default function ShipsInSantos({ navigation }) {
+    const [valueScheduled, setValueScheduled] = useState(<ActivityIndicator color="#264775"/>);
+    const [valueBerthed, setValueBerthed] = useState(<ActivityIndicator color="#264775"/>);
+    const [valueAnchored, setValueAnchored] = useState(<ActivityIndicator color="#264775"/>);
+    const [valuePassengers, setValuePassengers] = useState(<ActivityIndicator color="#264775"/>);
+    useEffect(() => {
+        apiScheduled
+            .get(axios.baseURL)
+            .then((response) => {
+                setValueScheduled(Object.keys(response.data).length);
+            })
+            .catch((err) => {
+                console.error("ops! Ocorreu um erro" + err.response.data);
+            });
+        apiBerthed
+            .get(axios.baseURL)
+            .then((response) => {
+                setValueBerthed(Object.keys(response.data).length);
+            })
+            .catch((err) => {
+                console.error("ops! Ocorreu um erro" + err.response.data);
+            });
+        apiAnchored
+            .get(axios.baseURL)
+            .then((response) => {
+                setValueAnchored(Object.keys(response.data).length);
+            })
+            .catch((err) => {
+                console.error("ops! Ocorreu um erro" + err.response.data);
+            });
+        apiPassengers
+            .get(axios.baseURL)
+            .then((response) => {
+                setValuePassengers(Object.keys(response.data).length);
+            })
+            .catch((err) => {
+                console.error("ops! Ocorreu um erro" + err.response.data);
+            });
+    }, []);
 
-    return(
+    return (
         <View>
-            <ImageBackground
-                style={styles.photoHomepage}
-                source={require("../../../img/PhotoHomepage.jpg")}
-            >
-                <View>
-                    <LogoSvg style={styles.logoSvg}/>
+            <View style={styles.mainOptions} />
+            <View style={styles.boxes}>
+                <View style={styles.firstRow}>
+                    <TouchableOpacity style={styles.boxScheduled} onPress={() => navigation.navigate("Home")}>
+                        <Clock style={styles.clock} />
+                        <Text style={styles.textNumber}>{valueScheduled}</Text>
+                        <Text style={styles.textInfo}>Navios Programados</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.boxBerthed}  onPress={() => navigation.navigate("Home")}>
+                        <Rope style={styles.rope} />
+                        <Text style={styles.textNumber}>{valueBerthed}</Text>
+                        <Text style={styles.textInfo}>Navios Atracados</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.boxShipsInSantosSvg}>
-                    <IconPortSvg style={styles.shipsInSantosSvg}/>
-                </View>
-                <View style={styles.boxText}>
-                    <Text style={styles.text}>Navios</Text>
-                    <Text style={styles.text}>em Santos</Text>
-                </View>
-            </ImageBackground>
-
-            <View style={styles.mainOptions}>
-                <View style={styles.boxMagnifierSvg}>
-                    <MagnifierSvg style={styles.magnifierSvg}/>
-                </View>
-                <TextInput style={styles.input} placeholder="   Buscar por Navio"/>
-
-                <View style={styles.boxFilterSvg}>
-                    <FilterSvg style={styles.filterSvg} />
-                </View>
-                <View style={styles.boxDrop}>
-                    <DropDownPicker
-                        style={styles.dropDown}
-                        open={open}
-                        value={value}
-                        items={items}
-                        setOpen={setOpen}
-                        setValue={setValue}
-                        setItems={setItems}
-                        showArrowIcon={false}
-                        placeholder="Filtrar"
-                        showTickIcon={false}
-                        selectedItemContainerStyle={{
-                            backgroundColor: "#DCDCDC",
-                        }}
-                    />
+                <View style={styles.secondRow}>
+                    <TouchableOpacity style={styles.boxAnchored}  onPress={() => navigation.navigate("Home")}>
+                        <Anchor style={styles.anchor} />
+                        <Text style={styles.textNumber}>{valueAnchored}</Text>
+                        <Text style={styles.textInfo}>Navios Fundeados</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.boxBoat} onPress = {() => navigation.navigate("Home")}>
+                        <Boat style={styles.boat} />
+                        <Text style={styles.textNumber}>{valuePassengers}</Text>
+                        <Text style={styles.textInfo}>Navios Esperados de Passageiros</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-
-            <View style={styles.container}>
-                <View style={styles.containerCardInfo}>
-
-                    <View style={styles.boxSvg} />
-                    <View style={styles.textsInfo}>
-                        <Text style={styles.cardTextLocal}>Local</Text>
-                        <Text style={styles.cardTextName}>Nome do Navio</Text>
-                        <Text style={styles.cardTextCargoType}>Tipo de Carga</Text>
-
-                        <View style={styles.cardTextCargo}>
-                            <Text>Carga</Text>
-                            <Text>Descarga</Text>
-                        </View>
-                        <View style={styles.cardTextCargoValue}>
-                            <Text>00000</Text>
-                            <Text style={styles.valueUnload}>00000</Text>
-                        </View>
-
-                        <TouchableOpacity style={styles.Button}>
-                            <View style={styles.buttonDetails}>
-                                <Text style={styles.textButton}>Detalhes</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-
-
-                </View>
-
-
-            </View>
+            <SocialMediaSvgs />
         </View>
     );
 }

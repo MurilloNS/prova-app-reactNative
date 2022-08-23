@@ -1,9 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, Image } from "react-native";
 
 import ScheduledMoorings from "./src/views/ScheduledMoorings";
+import BerthedShips from "./src/views/BerthedShips";
+import AnchoredShips from "./src/views/AnchoredShips";
 import PortOperations from "./src/views/PortOperations";
 import ShipsInSantos from "./src/views/ShipsInSantos";
 import ServiceCentral from "./src/views/ServiceCentral";
@@ -22,33 +24,98 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Routes}
-            options={{ headerShown: false }}
+            options={{headerShown:false}}
           />
-          <Stack.Screen name="Programados" component={ScheduledMoorings} />
           <Stack.Screen
             name="PortOperations"
             component={PortOperations}
-            options={{ title: "Operações Portuárias" }}
+            options={{
+              title: "Operações Portuárias",
+              headerBackground: (props) => (
+                <Image
+                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  source={require('./img/PhotoHomepage.jpg')}
+                  resizeMode='cover'
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 22,
+              },
+              headerTintColor: "#fff",
+            }}
           />
           <Stack.Screen
             name="ShipsInSantos"
             component={ShipsInSantos}
-            options={{ title: "Navios em Santos"}}
+            options={{
+              title: "Navios em Santos",
+              headerBackground: (props) => (
+                <Image
+                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  source={require('./img/PhotoHomepage.jpg')}
+                  resizeMode='cover'
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 22,
+                marginTop: "1%",
+              },
+              headerTintColor: "#fff",
+            }}
           />
           <Stack.Screen
             name="ServiceCentral"
             component={ServiceCentral}
-            options={{ title: "Central de Serviços" }}
+            options={{
+              title: "Central de Serviços",
+              headerBackground: (props) => (
+                <Image
+                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  source={require('./img/PhotoHomepage.jpg')}
+                  resizeMode='cover'
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 22,
+              },
+              headerTintColor: "#fff",
+            }}
           />
           <Stack.Screen
             name="DiscoverPort"
             component={DiscoverPort}
-            options={{ title: "Conheça o Porto" }}
+            options={{
+              title: "Conheça o Porto",
+              headerBackground: (props) => (
+                <Image
+                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  source={require('./img/PhotoHomepage.jpg')}
+                  resizeMode='cover'
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 22,
+              },
+              headerTintColor: "#fff",
+            }}
           />
           <Stack.Screen
             name="FinancialInfo"
             component={FinancialInfo}
-            options={{ title: "Informações Financeiras" }}
+            options={{ 
+              title: "Informações Financeiras",
+              headerBackground: (props) => (
+                <Image
+                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  source={require('./img/PhotoHomepage.jpg')}
+                  resizeMode='cover'
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 22,
+              },
+              headerTintColor: "#fff",
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -62,4 +129,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
+  
+  //comentario
 });

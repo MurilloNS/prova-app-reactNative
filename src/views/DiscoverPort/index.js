@@ -20,24 +20,6 @@ import LocationSvg from "../../../img/icons/Location.svg";
 export default function ServiceCentral() {
   return (
     <View>
-      <ImageBackground
-        style={styles.photoHomepage}
-        source={require("../../../img/PhotoHomepage.jpg")}
-      >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
-        <View style={styles.boxTitle}>
-          <View style={styles.boxLocationSvg}>
-            <LocationSvg style={styles.locationSvg} />
-          </View>
-          <View style={styles.boxTextLocation}>
-            <Text style={styles.textLocation}>Conheça</Text>
-            <Text style={styles.textLocation}>o Porto</Text>
-          </View>
-        </View>
-      </ImageBackground>
-
       <View style={styles.mainOptions} />
       <View style={styles.container}>
         <TouchableOpacity

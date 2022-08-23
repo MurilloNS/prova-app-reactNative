@@ -2,32 +2,26 @@ import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
   photoHomepage: {
-    width: 411,
-    height: 149,
-  },
-  boxLogoSvg: {
-    height: "40%",
-    width: "30%",
-    marginLeft: 20,
-    flexDirection: "column",
+    width: "100%",
+    height: 59,
   },
   boxAnchoredShipsSvg: {
-    height: "50%",
+    height: "108%",
     width: "20%",
-    marginLeft: "10%",
     flexDirection: "row",
   },
   AnchoredShipsSvg: {
-    height: "100%",
-    width: "100%",
+    height: "50%",
+    width: "50%",
+    marginTop: 15,
   },
   boxText: {
-    marginLeft: "40%",
-    marginTop: "-20%",
+    marginLeft: "23%",
+    marginTop: "-9.5%",
     alignItems: "center",
   },
   text: {
-    fontSize: 31,
+    fontSize: 21,
     color: "#FFFFFF",
     marginLeft: "-45%",
     textShadowRadius: 15,

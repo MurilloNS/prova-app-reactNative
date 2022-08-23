@@ -56,15 +56,11 @@ export default function BerthedShips() {
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
       >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
         <View style={styles.boxRopeSvg}>
           <RopeSvg style={styles.ropeSvg} />
         </View>
         <View style={styles.boxText}>
-          <Text style={styles.text}>Navios</Text>
-          <Text style={styles.text}>Atracados</Text>
+          <Text style={styles.text}>Navios Atracados</Text>
         </View>
       </ImageBackground>
       <View style={styles.mainOptions}>
@@ -73,7 +69,7 @@ export default function BerthedShips() {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Buscar por Navio ou Local"
+          placeholder="Buscar..."
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />

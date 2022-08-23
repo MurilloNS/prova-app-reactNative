@@ -22,23 +22,6 @@ import LogoSvg from "../../../img/logo.svg";
 export default function PortOperations() {
   return (
     <View>
-      <ImageBackground
-        style={styles.photoHomepage}
-        source={require("../../../img/PhotoHomepage.jpg")}
-      >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
-        <View style={styles.boxTitle}>
-          <View style={styles.boxShipSvg}>
-            <ShipSvg style={styles.shipSvg} />
-          </View>
-          <View style={styles.boxTextShips}>
-            <Text style={styles.textShip}>Operações</Text>
-            <Text style={styles.textShip}>Portuárias</Text>
-          </View>
-        </View>
-      </ImageBackground>
 
       <View style={styles.mainOptions} />
 

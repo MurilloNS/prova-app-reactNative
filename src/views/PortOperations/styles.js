@@ -1,30 +1,6 @@
-import reactDom from "react-dom";
 import { StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
-    photoHomepage: {
-        height: 149,
-        width: 411,
-      },
-      boxLogoSvg: {
-        height: "40%",
-        width: "30%",
-        marginLeft: 20,
-      },
-      boxTitle:{
-        flexDirection: "row",
-        height: 149,
-      },
-      boxShipSvg: {
-        height: "50%",
-        width: "20%",
-        marginLeft: "10%",
-        flexDirection: "row",
-      },
-      shipSvg: {
-        height: "100%",
-        width: "100%",
-      },
       boxTextShips: {
         marginTop: "-3%",
       },
@@ -60,7 +36,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 1},
         shadowOpacity: 0.2,
         elevation: 4,
-        marginTop: 10,
+        marginTop: "5%",
     },
     containerListOptions:{
         backgroundColor: "#FFFFFF",
@@ -85,6 +61,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         elevation: 4,
         marginTop: 10,
+        marginBottom: "25%",
     },
     firstBoxSvg:{
         borderTopLeftRadius: 10,
@@ -109,7 +86,7 @@ const styles = StyleSheet.create({
     iconSvg:{
         height: 50,
         width: 50,
-        marginLeft: 15,
+        marginLeft: 11,
     },
     boxText:{
         marginTop: "2%",

@@ -33,7 +33,12 @@ export default function AnchoredShips() {
                 for (let i = 0; i < Object.keys(response.data).length; i++) {
                     response.data[i].numero_viagem = response.data[i].numero_viagem.replace("<br>", "/");
                     response.data[i].mer_emb_desc = response.data[i].mer_emb_desc.replace("<br>", "");
+                    response.data[i].mer_emb_desc = response.data[i].mer_emb_desc.substring(0, 24);
                     response.data[i].navio = response.data[i].navio.replace(/<br>.*$/, "");
+                    response.data[i].entrada = response.data[i].entrada.replace(" ", "\n");
+                    response.data[i].compr_e_calado = response.data[i].compr_e_calado.replace("<br>", "/");
+                    response.data[i].ton_emm_desc = response.data[i].ton_emm_desc.replace("<br>", "");
+                    response.data[i].oper_emb_desc = response.data[i].oper_emb_desc.replace("<br>", "");
                 }
                 setOriginalData(response.data);
                 setListAnchoredShips(response.data);
@@ -45,7 +50,7 @@ export default function AnchoredShips() {
 
     function search(s) {
         let arr = JSON.parse(JSON.stringify(originalData));
-        setListAnchoredShips(arr.filter((d) => d.navio.includes(s) ||  d.terminal.includes(s) || d.numero_viagem.includes(s)  || d.numeroatracacao.includes(s)));
+        setListAnchoredShips(arr.filter((d) => d.navio.includes(s) || d.terminal.includes(s) || d.numero_viagem.includes(s) ));
     }
 
     return (
@@ -54,15 +59,13 @@ export default function AnchoredShips() {
                 style={styles.photoHomepage}
                 source={require("../../../img/PhotoHomepage.jpg")}
             >
-                <View style={styles.boxLogoSvg}>
-                    <LogoSvg />
-                </View>
-                <View style={styles.boxAnchoredShipsSvg}>
-                    <AnchorSvg style={styles.AnchoredShipsSvg} />
-                </View>
-                <View style={styles.boxText}>
-                    <Text style={styles.text}>Navios</Text>
-                    <Text style={styles.text}>Fundeados</Text>
+                <View>
+                    <View style={styles.boxAnchoredShipsSvg}>
+                        <AnchorSvg style={styles.AnchoredShipsSvg} />
+                    </View>
+                    <View style={styles.boxText}>
+                        <Text style={styles.text}>Navios Fundeados</Text>
+                    </View>
                 </View>
             </ImageBackground>
             <View style={styles.mainOptions} >
@@ -71,7 +74,7 @@ export default function AnchoredShips() {
                 </View>
                 <TextInput
                     style={styles.input}
-                    placeholder="Buscar por Navio"
+                    placeholder="Buscar..."
                     onChangeText={(s) => search(s)}
                     autoCapitalize="characters"
                 />

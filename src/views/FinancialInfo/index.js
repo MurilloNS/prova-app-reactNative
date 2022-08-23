@@ -1,5 +1,5 @@
 import react from "react";
-import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity, Linking } from "react-native";
 import styles from "./styles";
 
 import LogoSvg from "../../../img/logo.svg";
@@ -14,74 +14,81 @@ import SocialMediaSvgs from "../../components/SocialMediasIcons";
 export default function FinancialInfo() {
     return (
         <View>
-            <ImageBackground
-        style={styles.photoHomepage}
-        source={require("../../../img/PhotoHomepage.jpg")}
-      >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
-        <View style={styles.boxTitle}>
-        <View style={styles.boxMoneySvg}>
-          <MoneySvg style={styles.moneySvg} />
-        </View>
-        <View style={styles.boxTextMoney}>
-          <Text style={styles.textMoney}>Operações</Text>
-          <Text style={styles.textMoney}>Portuárias</Text>
-        </View>
-        </View>
-      </ImageBackground>
             <View style={styles.mainOptions} />
-
             <View style={styles.container}>
-                <View style={styles.firstContainerListOption}>
+                <TouchableOpacity 
+                style={styles.firstContainerListOption}
+                onPress={() =>
+                    Linking.openURL(
+                        "https://www.portodesantos.com.br/informacoes-financeiras/visao-geral-financeiro/?pagina=santos-port-authority/a-companhia/"
+                    )}>
                     <View style={styles.firstBoxSvg}>
                         <IconPortSvg style={styles.iconSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>A SPA</Text>
                         <Text style={styles.text}>Apresentações Institucionais, Relatório Anual e mais</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.containerListOptions}>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                style={styles.containerListOptions}
+                onPress={() =>
+                    Linking.openURL(
+                        "https://www.portodesantos.com.br/informacoes-financeiras/visao-geral-financeiro/?pagina=santos-port-authority/governanca-corporativa/"
+                    )}>
                     <View style={styles.boxSvg}>
                         <IconComplexSvg style={styles.iconDifSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>Governança Corporativa</Text>
                         <Text style={styles.text}>Composição Acionária, Estatuto, Ouvidoria e mais</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.containerListOptions}>
+                <TouchableOpacity 
+                style={styles.containerListOptions}
+                onPress={() =>
+                    Linking.openURL(
+                        "https://www.portodesantos.com.br/informacoes-financeiras/visao-geral-financeiro/?pagina=informacoes-financeiras/relatorios-anuais/"
+                        )}>
                     <View style={styles.boxSvg}>
                         <MoneySvg style={styles.iconSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>Informações Financeiras</Text>
                         <Text style={styles.text}>Central de resultados, Planilhas Dinâmicas e mais</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.containerListOptions}>
+                <TouchableOpacity
+                 style={styles.containerListOptions}
+                 onPress={() =>
+                    Linking.openURL(
+                        "https://www.portodesantos.com.br/category/comunicados/?financeiro=1"
+                    )}>
                     <View style={styles.boxSvg}>
                         <LocationSvg style={styles.iconSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>Comunicados</Text>
                         <Text style={styles.text}>Press Releases e Comunicados</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.lastContainerListOptions}>
+                <TouchableOpacity 
+                style={styles.lastContainerListOptions}
+                onPress={() =>
+                    Linking.openURL(
+                        "https://www.portodesantos.com.br/informacoes-financeiras/visao-geral-financeiro/?pagina=spaday"
+                    )}>
                     <View style={styles.lastBoxSvg}>
                         <InfoMercadoSvg style={styles.iconInfoSvg} />
                     </View>
-                    <TouchableOpacity style={styles.boxText}>
+                    <View style={styles.boxText}>
                         <Text style={styles.textListOptions}>Informações ao Mercado</Text>
                         <Text style={styles.text}>SPA Day, FAQ financeiro, Calendário de eventos e mais</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
             </View>
             <SocialMediaSvgs />
         </View>

@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   iconCabecaSvg: {
     height: "100%",
     width: "100%",
-    marginLeft: "13%"
+    marginLeft: "13%",
   },
   boxText: {
     marginTop: "2%",

@@ -34,28 +34,75 @@ export default function ListAnchored({ list }) {
         renderItem={({ item }) => {
           return (
             <View style={styles.container}>
-              <View style={styles.containerCardInfo}>
+              <View style={[
+                show == item
+                  ? styles.containerCardInfoOpened
+                  : styles.containerCardInfoClosed
+              ]}
+              >
                 <View style={styles.boxSvg} />
                 <View style={styles.textsInfo}>
-                  <Text style={styles.cardTextLocal}>{item.terminal}</Text>
-
-                  <Text style={styles.cardTextName}>{item.navio}</Text>
+                  <View style={styles.topContainer}>
+                    <Text style={styles.cardTextLocal}>{item.terminal}</Text>
+                    <Text style={styles.cardTextArrival}>Chegada</Text>
+                  </View>
+                  <View style={styles.secondContainer}>
+                    <Text style={styles.cardTextName}>{item.navio}</Text>
+                    <Text style={styles.valueArrival}>{item.entrada}</Text>
+                  </View>
                   <Text style={styles.cardTextCargoType}>{item.mer_emb_desc}</Text>
-
-                  <View style={styles.cardTextCargo}>
-                    <Text>Carimbo</Text>
+                  <View style={styles.containerTitle1}>
+                    <Text style={styles.textNotice}>Carimbo</Text>
                     <Text style={styles.textDuv}>Viagem</Text>
                   </View>
-                  <View style={styles.cardTextCargoValue}>
-                    <Text>{item.numeroatracacao}</Text>
+                  <View style={styles.containerValue1}>
+                    <Text style={styles.valueNotice}>{item.numeroatracacao}</Text>
                     <Text style={styles.valueUnload}>{item.numero_viagem}</Text>
                   </View>
 
-                  <TouchableOpacity style={styles.Button}>
-                    <View style={styles.buttonDetails}>
-                      <Text style={styles.textButton}>Detalhes</Text>
+                  {show == item && (
+                    <View>
+                      <View style={styles.containerTitle2}>
+                        <Text style={styles.textFlag}>Bandeira</Text>
+                        <Text>Comp Calado</Text>
+                      </View>
+                      <View style={styles.containerValue2}>
+                        <Text style={styles.valueFlag}>{item.nacionalidade}</Text>
+                        <Text style={styles.valueDraft}>{item.compr_e_calado}</Text>
+                      </View>
+                      <View style={styles.containerTitle3}>
+                        <Text style={styles.textPriority}>Prioridade</Text>
+                        <Text style={styles.textNav}>Navegação</Text>
+                      </View>
+                      <View style={styles.containerValue3}>
+                        <Text style={styles.valuePriority}>{item.prioridade}</Text>
+                        <Text style={styles.valueNav}>{item.tipoviagem}</Text>
+                      </View>
+                      <View style={styles.containerTitle4}>
+                        <Text style={styles.textWeight}>Peso</Text>
+                        <Text style={styles.textOperation}>Operação</Text>
+                      </View>
+                      <View style={styles.containerValue4}>
+                        <Text style={styles.valueWeight}>{item.ton_emm_desc}</Text>
+                        <Text style={styles.valueOperation}>{item.oper_emb_desc}</Text>
+                      </View>
+                      <View style={styles.containerTitle5}>
+                        <Text style={styles.textOffice}>Agência</Text>
+                      </View>
+                      <View style={styles.containerValue5}>
+                        <Text style={styles.valueOffice}>{item.agencia}</Text>
+                      </View>
                     </View>
+                  )}
+
+                  <TouchableOpacity
+                    style={styles.buttonDetails}
+                    onPress={() => setShow(item)}
+                  >
+                    <Text style={styles.textButton}>Detalhes</Text>
                   </TouchableOpacity>
+
+
                 </View>
               </View>
             </View>

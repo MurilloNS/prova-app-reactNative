@@ -64,6 +64,3 @@ $ npm start ou expo start
     <li><a href="https://docs.expo.dev/">Expo</a></li>
   </ul>
 </p>
-
-
-

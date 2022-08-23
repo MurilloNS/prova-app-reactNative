@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   flatList: {
-    marginBottom: "70%",
-    zIndex: -1,
+    marginBottom: "48%",
   },
   container: {
     height: "auto",

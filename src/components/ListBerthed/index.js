@@ -34,7 +34,7 @@ export default function ListAnchored({ list }) {
                   <Text style={styles.cardTextName}>{item.nomenavio}</Text>
                   <Text style={styles.cardTextCargoType}>{item.mercadoria}</Text>
                   <View style={styles.cardTextCargo}>
-                    <Text>Carga</Text>
+                    <Text style={styles.cargoText}>Carga</Text>
                     <Text style={styles.textUnload}>Descarga</Text>
                   </View>
                   <View style={styles.cardTextCargoValue}>

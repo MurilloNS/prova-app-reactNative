@@ -1,5 +1,5 @@
 import react from "react";
-import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity, Linking } from "react-native";
 
 import styles from "./styles";
 
@@ -12,46 +12,45 @@ export default function ServiceCentral() {
 
   return (
     <View>
-      <ImageBackground
-        style={styles.photoHomepage}
-        source={require("../../../img/PhotoHomepage.jpg")}
-      >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
-        <View style={styles.boxTitle}>
-        <View style={styles.boxCabecaSvg}>
-          <CabecaSvg style={styles.cabecaSvg} />
-        </View>
-        <View style={styles.boxTextCabeca}>
-          <Text style={styles.textCabeca}>Central de</Text>
-          <Text style={styles.textCabeca}>Serviços</Text>
-        </View>
-        </View>
-      </ImageBackground>
-
       <View style={styles.mainOptions} />
       <View style={styles.container}>
-        <View style={styles.firstContainerListOption}>
+
+        <TouchableOpacity 
+        style={styles.firstContainerListOption}
+        onPress={() =>
+          Linking.openURL(
+            "https://portaldocliente.portodesantos.com.br/login"
+          )}>
           <View style={styles.firstBoxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Cliente e Fornecedor</Text>
             <Text style={styles.text}>Portal do Cliente e Fornecedor</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.containerListOptions}>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+        style={styles.containerListOptions}
+        onPress={() =>
+          Linking.openURL(
+          "http://supervia.portodesantos.com.br/portal_supervia/"
+        )}>
           <View style={styles.boxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Supervia</Text>
             <Text style={styles.text}>Supervia</Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.containerListOptions}>
+        <TouchableOpacity 
+        style={styles.containerListOptions}
+        onPress={() =>
+          Linking.openURL(
+            "http://sspp.portodesantos.com.br/"
+          )}>
           <View style={styles.boxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
@@ -59,20 +58,30 @@ export default function ServiceCentral() {
             <Text style={styles.textListOptions}>SSPP</Text>
             <Text style={styles.text}>SSPP</Text>
           </View>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.containerListOptions}>
+        <TouchableOpacity
+        style={styles.containerListOptions}
+        onPress={() =>
+          Linking.openURL(
+            "https://www.portodesantos.com.br/central-de-servicos/porto-sem-papel/"
+          )}>
           <View style={styles.boxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
-          <TouchableOpacity style={styles.boxText}>
+          <View style={styles.boxText}>
             <Text style={styles.textListOptions}>Porto sem Papel</Text>
             <Text style={styles.text}>Porto sem Papel</Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
 
 
-        <View style={styles.lastContainerListOptions}>
+        <TouchableOpacity
+        style={styles.lastContainerListOptions}
+        onPress={() =>
+          Linking.openURL(
+            "https://www.portodesantos.com.br/central-de-servicos/emissao-de-certificado-de-operador-portuario/"
+          )}>
           <View style={styles.lastBoxSvg}>
             <IconPortSvg style={styles.iconSvg} />
           </View>
@@ -80,7 +89,7 @@ export default function ServiceCentral() {
             <Text style={styles.textListOptions}>Operador Portuário</Text>
             <Text style={styles.text}>Operador Portuário</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
       <SocialMediaSvgs />
     </View>

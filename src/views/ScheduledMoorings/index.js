@@ -7,7 +7,6 @@ import styles from "./styles";
 import LogoSvg from "../../../img/logo.svg";
 import ClockSvg from "../../../img/icons/Clock.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
-import FilterSvg from "../../../img/icons/Filter.svg";
 import List from "../../components/List";
 import axios from "axios";
 
@@ -42,7 +41,12 @@ export default function ScheduledMoorings() {
 
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListScheduled(arr.filter((d) => d.nomenavio.includes(s) || d.viagem.includes(s) || d.duv.includes(s)));
+    setListScheduled(
+      arr.filter(
+        (d) =>
+          d.nomenavio.includes(s) || d.viagem.includes(s) || d.duv.includes(s)
+      )
+    );
   }
 
   return (
@@ -51,15 +55,11 @@ export default function ScheduledMoorings() {
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
       >
-        <View style={styles.boxLogoSvg}>
-          <LogoSvg />
-        </View>
         <View style={styles.boxClockSvg}>
           <ClockSvg style={styles.clockSvg} />
         </View>
         <View style={styles.boxText}>
-          <Text style={styles.text}>Atracações</Text>
-          <Text style={styles.text}>Programadas</Text>
+          <Text style={styles.text}>Atracações Programadas</Text>
         </View>
       </ImageBackground>
       <View style={styles.mainOptions}>

@@ -2,36 +2,31 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     photoHomepage: {
-        height: 149,
-        width: 411,
-    },
-    boxLogoSvg : {
-        height: "40%",
-        width: "30%",
-        marginLeft: 20,
+        width: "100%",
+        height: 59,
     },
     boxRopeSvg: {
-        height: "50%",
+        height: "106%",
         width: "20%",
-        marginLeft: "10%",
         flexDirection: "row",
     },
     ropeSvg: {
-        height: "110%",
-        width: "110%",
+        height: "50%",
+        width: "50%",
+        marginTop: 15,
     },
     boxText: {
-        marginLeft: "40%",
-        marginTop: "-20%",
+        marginLeft: "22.5%",
+        marginTop: "-11%",
+        alignItems: "center",
     },
     text: {
-        fontSize: 31,
+        fontSize: 21,
         color: "#FFFFFF",
         marginLeft: "-45%",
         textShadowRadius: 15,
-        textShadowColor: "#000",
+        textShadowColor: "#000000",
         textShadowOffset: { width: 1, height: 1 },
-        textAlign: "center",
     },
     mainOptions: {
         borderTopColor: "#04ADBF",

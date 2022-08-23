@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     elevation: 4,
-    marginTop: 10,
+    marginTop: "5%",
   },
   containerListOptions: {
     backgroundColor: "#FFFFFF",
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     elevation: 4,
     marginTop: 10,
+    marginBottom: "25%",
   },
   firstBoxSvg: {
     backgroundColor: "#264775",
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
   iconInfoSvg:{
     height: 50,
     width: 50,
-    marginLeft: 17,
+    marginLeft: 11,
   },
   boxText: {
     marginTop: "2%",
