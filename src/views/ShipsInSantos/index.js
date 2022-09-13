@@ -77,24 +77,24 @@ export default function ShipsInSantos({ navigation }) {
             <View style={styles.mainOptions} />
             <View style={styles.boxes}>
                 <View style={styles.firstRow}>
-                    <TouchableOpacity style={styles.boxScheduled} onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={styles.boxScheduled} onPress={() => navigation.navigate("Programados")}>
                         <Clock style={styles.clock} />
                         <Text style={styles.textNumber}>{valueScheduled}</Text>
                         <Text style={styles.textInfo}>Navios Programados</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.boxBerthed}  onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={styles.boxBerthed}  onPress={() => navigation.navigate("Atracados")}>
                         <Rope style={styles.rope} />
                         <Text style={styles.textNumber}>{valueBerthed}</Text>
                         <Text style={styles.textInfo}>Navios Atracados</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.secondRow}>
-                    <TouchableOpacity style={styles.boxAnchored}  onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={styles.boxAnchored}  onPress={() => navigation.navigate("Fundeados")}>
                         <Anchor style={styles.anchor} />
                         <Text style={styles.textNumber}>{valueAnchored}</Text>
                         <Text style={styles.textInfo}>Navios Fundeados</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.boxBoat} onPress = {() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={styles.boxBoat} onPress = {() => navigation.navigate("")}>
                         <Boat style={styles.boat} />
                         <Text style={styles.textNumber}>{valuePassengers}</Text>
                         <Text style={styles.textInfo}>Navios Esperados de Passageiros</Text>
