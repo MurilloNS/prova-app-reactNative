@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     width: "14%",
     flexDirection: "row",
     marginLeft: "14%",
+    marginBottom: "5%",
   },
   containerSocialMedias: {
     marginTop: "7%",
