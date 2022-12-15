@@ -88,7 +88,7 @@ export default function Home({ navigation }) {
             }
           >
             <View style={styles.boxSvg}>
-              <ChartSvg style={styles.iconSvg} />
+              <ChartSvg style={styles.iconCabecaSvg} />
             </View>
             <View style={styles.boxText}>
               <Text style={styles.textListOptions}>Estatísticas Online</Text>

@@ -33,5 +33,19 @@
     "react-native-svg-transformer": "^1.0.0",
     "transformer": "^1.2.8"
   },
-  "private": true
+  "private": true,
+  "description": "<h1 align=\"center\">SPA-APP</h1>\r <p align=\"center\">Aplicativo para visualizar a situação dos navios e principais serviços na Santos Port Authority</p>\r <p align=\"center\">\r   <a href=\"https://www.npmjs.com/\">\r     <img src=\"https://img.shields.io/static/v1?label=NPM&message=V8.11.0&color=264775&style=for-the-badge\"/>\r   </a>\r   <a href=\"https://docs.expo.dev/\">\r     <img src=\"https://img.shields.io/static/v1?label=Expo-cli&message=V5.5.1&color=264775&style=for-the-badge\"/>\r   </a>\r </p>\r <p align=\"center\">\r  <a href=\"#objetivo\">Objetivo</a> •\r  <a href=\"#pré-requisitos\">Pré-requisitos</a> • \r  <a href=\"#tecnologias\">Tecnologias</a> • \r </p>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MurilloNS/spa-apk.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "SPA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MurilloNS/spa-apk/issues"
+  },
+  "homepage": "https://github.com/MurilloNS/spa-apk#readme"
 }
