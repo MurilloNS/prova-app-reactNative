@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, ImageBackground, Text, TextInput } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
+import { View, ImageBackground, Text, TextInput, StatusBar } from "react-native";
 
 import styles from "./styles";
 
-import LogoSvg from "../../../img/logo.svg";
 import ClockSvg from "../../../img/icons/Clock.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import List from "../../components/List";
@@ -50,7 +48,7 @@ export default function ScheduledMoorings() {
   }
 
   return (
-    <View>
+    <View style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}

@@ -6,14 +6,15 @@ import {
   TouchableOpacity,
   Linking,
   ScrollView,
+  StatusBar
 } from "react-native";
 
 import styles from "./styles";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 
-import LogoSvg from "../../../img/logo.svg";
+import LogoMain from "../../../img/logomain.svg";
+import LogoSvg from "../../../img/negativo.svg";
 import ShipSvg from "../../../img/icons/Ship.svg";
-import CabecaSvg from "../../../img/icons/Cabeca.svg";
 import LocationSvg from "../../../img/icons/Location.svg";
 import MoneySvg from "../../../img/icons/Money.svg";
 import IconPortSvg from "../../../img/icons/IconPort.svg";
@@ -22,15 +23,14 @@ import ChartSvg from "../../../img/icons/chart.svg";
 
 export default function Home({ navigation }) {
   return (
-    <ScrollView>
+    <ScrollView style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
       <View>
         <ImageBackground
           style={styles.photoHomepage}
           source={require("../../../img/PhotoHomepage.jpg")}
         >
-          <View>
-            <LogoSvg style={styles.logoSvg} />
-          </View>
+          <LogoMain style={styles.logoMain} />
+          <LogoSvg style={styles.logoSvg} />
         </ImageBackground>
 
         <View style={styles.mainOptions} />

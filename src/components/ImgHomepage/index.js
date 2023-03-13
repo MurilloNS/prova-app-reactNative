@@ -1,9 +1,7 @@
 import React from "react";
-import { View, Text, Linking, ImageBackground } from "react-native";
+import { View, Linking, ImageBackground } from "react-native";
 
 import styles from "./styles";
-import MainOptions from "../MainOptions";
-import ListOptions from "../ListOptions";
 
 import TwitterSvg from "../../../img/icons/Twitter.svg";
 import InstagramSvg from "../../../img/icons/Instagram.svg";

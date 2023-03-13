@@ -6,11 +6,13 @@ const styles = StyleSheet.create({
     width: 411,
     flexDirection: "row",
   },
+  logoMain: {
+    marginLeft: 10,
+    marginTop: -30,
+  },
   logoSvg: {
-    marginLeft: 20,
-    marginRight: 30,
-    marginBottom: -10,
-    marginRight: -20,
+    marginLeft: -140,
+    marginTop: 70,
   },
   mainOptions: {
     borderTopColor: "#04ADBF",

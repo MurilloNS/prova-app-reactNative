@@ -3,13 +3,12 @@ import {
   View,
   ImageBackground,
   Text,
-  TextInput
+  TextInput,
+  StatusBar
 } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
 
 import styles from "./styles";
 
-import LogoSvg from "../../../img/logo.svg";
 import RopeSvg from "../../../img/icons/Rope.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import ListBerthed from "../../components/ListBerthed";
@@ -51,7 +50,7 @@ export default function BerthedShips() {
   }
 
   return (
-    <View>
+    <View style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}

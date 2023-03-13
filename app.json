@@ -26,7 +26,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.santos.spaapk"
+      "package": "com.santos.spaapk",
+      "buildType": "apk"
     },
     "web": {
       "favicon": "./assets/favicon.png"

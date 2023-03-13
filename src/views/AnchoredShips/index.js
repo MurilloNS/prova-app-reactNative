@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { View, ImageBackground, Text, TextInput } from "react-native";
+import { View, ImageBackground, Text, TextInput, StatusBar } from "react-native";
 
 import styles from "./styles";
 
 
-import LogoSvg from "../../../img/logo.svg";
 import AnchorSvg from "../../../img/icons/Anchor.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import ListAnchored from "../../components/ListAnchored";
@@ -54,7 +53,7 @@ export default function AnchoredShips() {
     }
 
     return (
-        <View>
+        <View style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
             <ImageBackground
                 style={styles.photoHomepage}
                 source={require("../../../img/PhotoHomepage.jpg")}

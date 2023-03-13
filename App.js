@@ -48,14 +48,12 @@ export default function App() {
               title: "Navios em Santos",
               headerBackground: (props) => (
                 <Image
-                  style={{ width: "100%", height: 270, marginTop: -16 }}
+                  style={{ width: "100%", height: "100%"}}
                   source={require('./img/PhotoHomepage.jpg')}
-                  resizeMode='cover'
                 />
               ),
               headerTitleStyle: {
                 fontSize: 22,
-                marginTop: "1%",
               },
               headerTintColor: "#fff",
             }}
@@ -142,7 +140,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    //paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   
   //comentario
