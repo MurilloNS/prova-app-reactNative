@@ -136,7 +136,20 @@ const styles = StyleSheet.create({
     marginLeft: "-12.4%",
     marginTop: 100,
     zIndex: 1,
-    marginRight: 18
-  }
+    marginRight: 18,
+  },
+  termoPrivate: {
+    fontSize: 12,
+    color: "#000",
+    marginLeft: 5,
+  },
+  boxTermo: {
+    height: 20,
+    width: "100%",
+    marginTop: "5%",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
 });
 export default styles;

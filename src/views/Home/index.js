@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Linking,
   ScrollView,
-  StatusBar,
   Image,
 } from "react-native";
 
@@ -24,11 +23,7 @@ import ChartSvg from "../../../img/icons/chart.svg";
 
 export default function Home({ navigation }) {
   return (
-    <ScrollView
-      style={{
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-      }}
-    >
+    <ScrollView>
       <View>
         <ImageBackground
           style={styles.photoHomepage}
@@ -130,7 +125,7 @@ export default function Home({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.lastContainerListOptions}
+            style={styles.containerListOptions}
             onPress={() => Linking.openURL("https://mapyx.navalport.com//")}
           >
             <View style={styles.boxSvg}>
@@ -159,7 +154,19 @@ export default function Home({ navigation }) {
             </View>
           </TouchableOpacity>
         </View>
-
+        <View style={styles.boxTermo}>
+          <Image style={{height: 10, width: 10}} source={require("../../../img/cadeado.png")}/>
+          <Text
+            style={styles.termoPrivate}
+            onPress={() =>
+              Linking.openURL(
+                "https://www.portodesantos.com.br/informacao/termo-de-privacidade/"
+              )
+            }
+          >
+            Termo de ´Privacidade
+          </Text>
+        </View>
         <SocialMediaSvgs />
       </View>
       <View style={{ marginTop: "10%" }} />
