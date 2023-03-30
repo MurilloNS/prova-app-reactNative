@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     marginTop: -30,
   },
   logoSvg: {
-    marginLeft: -140,
+    marginLeft: -75,
     marginTop: 70,
   },
   mainOptions: {
@@ -103,5 +103,40 @@ const styles = StyleSheet.create({
     marginLeft: 1,
     width: 250,
   },
+  viewLogos: {
+    backgroundColor: "#f1f1f1",
+    height: "35%",
+    width: "60%",
+    marginLeft: -25,
+    marginTop: 100,
+    justifyContent: "center",
+  },
+  logoSpa: {
+    height: 40,
+    width: 90,
+    marginLeft: 5,
+  },
+  logoBrasil: {
+    height: 40,
+    width: 220,
+    marginTop: -40,
+    marginLeft: 20,
+  },
+  teste: {
+    width: 0,
+    height: 0,
+    backgroundColor: "transparent",
+    borderStyle: "solid",
+    borderLeftWidth: 5,
+    borderRightWidth: 7,
+    borderTopWidth: 50,
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
+    borderTopColor: "#2f4f68",
+    marginLeft: "-12.4%",
+    marginTop: 100,
+    zIndex: 1,
+    marginRight: 18
+  }
 });
 export default styles;

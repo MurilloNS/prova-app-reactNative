@@ -6,14 +6,15 @@ import {
   TouchableOpacity,
   Linking,
   ScrollView,
-  StatusBar
+  StatusBar,
+  Image,
 } from "react-native";
 
 import styles from "./styles";
 import SocialMediaSvgs from "../../components/SocialMediasIcons";
 
 import LogoMain from "../../../img/logomain.svg";
-import LogoSvg from "../../../img/negativo.svg";
+import MapyxSvg from "../../../img/icons/mapyx.svg";
 import ShipSvg from "../../../img/icons/Ship.svg";
 import LocationSvg from "../../../img/icons/Location.svg";
 import MoneySvg from "../../../img/icons/Money.svg";
@@ -23,14 +24,29 @@ import ChartSvg from "../../../img/icons/chart.svg";
 
 export default function Home({ navigation }) {
   return (
-    <ScrollView style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
+    <ScrollView
+      style={{
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+      }}
+    >
       <View>
         <ImageBackground
           style={styles.photoHomepage}
           source={require("../../../img/PhotoHomepage.jpg")}
         >
           <LogoMain style={styles.logoMain} />
-          <LogoSvg style={styles.logoSvg} />
+          <View style={styles.teste}></View>
+          <View style={styles.viewLogos}>
+            <Image
+              source={require("../../../img/logo-spa.png")}
+              style={styles.logoSpa}
+            />
+            <Image
+              source={require("../../../img/logo-brasil.png")}
+              style={styles.logoBrasil}
+            />
+          </View>
+          {/*<LogoSvg style={styles.logoSvg} />*/}
         </ImageBackground>
 
         <View style={styles.mainOptions} />
@@ -115,6 +131,21 @@ export default function Home({ navigation }) {
 
           <TouchableOpacity
             style={styles.lastContainerListOptions}
+            onPress={() => Linking.openURL("https://mapyx.navalport.com//")}
+          >
+            <View style={styles.boxSvg}>
+              <MapyxSvg style={styles.iconSvg} />
+            </View>
+            <View style={styles.boxText}>
+              <Text style={styles.textListOptions}>MAPYX</Text>
+              <Text style={styles.text}>
+                Acompanhe a posição dos navios em tempo real
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.lastContainerListOptions}
             onPress={() => navigation.navigate("DiscoverPort")}
           >
             <View style={styles.lastBoxSvg}>
@@ -131,6 +162,7 @@ export default function Home({ navigation }) {
 
         <SocialMediaSvgs />
       </View>
+      <View style={{ marginTop: "10%" }} />
     </ScrollView>
   );
 }
