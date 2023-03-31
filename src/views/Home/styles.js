@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
   boxTermo: {
     height: 20,
     width: "100%",
-    marginTop: "5%",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",

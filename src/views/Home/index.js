@@ -154,8 +154,12 @@ export default function Home({ navigation }) {
             </View>
           </TouchableOpacity>
         </View>
+        <SocialMediaSvgs />
         <View style={styles.boxTermo}>
-          <Image style={{height: 10, width: 10}} source={require("../../../img/cadeado.png")}/>
+          <Image
+            style={{ height: 10, width: 10 }}
+            source={require("../../../img/cadeado.png")}
+          />
           <Text
             style={styles.termoPrivate}
             onPress={() =>
@@ -167,7 +171,6 @@ export default function Home({ navigation }) {
             Termo de ´Privacidade
           </Text>
         </View>
-        <SocialMediaSvgs />
       </View>
       <View style={{ marginTop: "10%" }} />
     </ScrollView>
