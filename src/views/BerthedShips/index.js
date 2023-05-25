@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   View,
   ImageBackground,
   Text,
   TextInput,
-  StatusBar
+  SafeAreaView,
 } from "react-native";
 
 import styles from "./styles";
@@ -15,7 +15,8 @@ import ListBerthed from "../../components/ListBerthed";
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=atracados",
+  baseURL:
+    "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=atracados",
 });
 
 export default function BerthedShips() {
@@ -30,12 +31,13 @@ export default function BerthedShips() {
   const [ListBerthedShips, setListBerthedShips] = useState([]);
 
   useEffect(() => {
-    api.get(axios.baseURL)
-      
+    api
+      .get(axios.baseURL)
+
       .then((response) => {
         for (let i = 0; i < Object.keys(response.data).length; i++) {
           response.data[i].descarga = response.data[i].descarga.toString();
-      }
+        }
         setOriginalData(response.data);
         setListBerthedShips(response.data);
       })
@@ -46,11 +48,18 @@ export default function BerthedShips() {
 
   function search(s) {
     let arr = JSON.parse(JSON.stringify(originalData));
-    setListBerthedShips(arr.filter((d) => d.nomenavio.includes(s) || d.descricao_local.includes(s) || d.descarga.includes(s)));
+    setListBerthedShips(
+      arr.filter(
+        (d) =>
+          d.nomenavio.includes(s) ||
+          d.descricao_local.includes(s) ||
+          d.descarga.includes(s)
+      )
+    );
   }
 
   return (
-    <View style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
+    <SafeAreaView>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
@@ -74,6 +83,6 @@ export default function BerthedShips() {
         />
       </View>
       <ListBerthed list={ListBerthedShips} />
-    </View>
+    </SafeAreaView>
   );
 }

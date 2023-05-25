@@ -1,5 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { View, ImageBackground, Text, TextInput, StatusBar } from "react-native";
+import { useState, useEffect } from "react";
+import {
+  View,
+  ImageBackground,
+  Text,
+  TextInput,
+  SafeAreaView,
+} from "react-native";
 
 import styles from "./styles";
 
@@ -48,7 +54,7 @@ export default function ScheduledMoorings() {
   }
 
   return (
-    <View style={{paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,}}>
+    <SafeAreaView>
       <ImageBackground
         style={styles.photoHomepage}
         source={require("../../../img/PhotoHomepage.jpg")}
@@ -84,6 +90,6 @@ export default function ScheduledMoorings() {
       </View>
 
       <List list={listScheduled} />
-    </View>
+    </SafeAreaView>
   );
 }
