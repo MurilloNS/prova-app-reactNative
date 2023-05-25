@@ -14,6 +14,8 @@ import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import List from "../../components/List";
 import axios from "axios";
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 const api = axios.create({
   baseURL:
     "https://intranet.portodesantos.com.br/_json/porto_hoje.asp?tipo=programados2",
@@ -23,6 +25,9 @@ export default function ScheduledMoorings() {
   const [listScheduled, setListScheduled] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const lista = [0, 1, 2, 3, 4, 5, 6];
+
+  const [navio, setNavio] = useState();
+  const [input, setInput] = useState();
 
   useEffect(() => {
     api
@@ -38,6 +43,13 @@ export default function ScheduledMoorings() {
       .catch((err) => {
         console.error("ops! Ocorreu um erro" + err.response.data);
       });
+
+      const recuperarNavio = async () => {
+        const nomeNavio = await AsyncStorage.getItem("navio");
+        setNavio(nomeNavio);
+      };
+  
+      recuperarNavio();
   }, []);
 
   const [open, setOpen] = useState(false);
@@ -51,7 +63,17 @@ export default function ScheduledMoorings() {
           d.nomenavio.includes(s) || d.viagem.includes(s) || d.duv.includes(s)
       )
     );
+
+    setInput(s)
+    gravaNavio(s);
   }
+
+  const gravaNavio = async () => {
+    setNavio(input);
+    await AsyncStorage.setItem("navio", input);
+    //Keyboard.dismiss();
+    //alert("Salvo com sucesso!");
+  };
 
   return (
     <SafeAreaView>
@@ -73,6 +95,7 @@ export default function ScheduledMoorings() {
         <TextInput
           style={styles.input}
           placeholder="Buscar..."
+          value={input}
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />

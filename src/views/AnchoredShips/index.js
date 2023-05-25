@@ -4,7 +4,7 @@ import {
   ImageBackground,
   Text,
   TextInput,
-  SafeAreaView,
+  SafeAreaView
 } from "react-native";
 
 import styles from "./styles";
@@ -13,6 +13,8 @@ import AnchorSvg from "../../../img/icons/Anchor.svg";
 import MagnifierSvg from "../../../img/icons/Magnifier.svg";
 import ListAnchored from "../../components/ListAnchored";
 import axios from "axios";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const api = axios.create({
   baseURL:
@@ -30,6 +32,9 @@ export default function AnchoredShips() {
 
   const [ListAnchoredShips, setListAnchoredShips] = useState([]);
   const [originalData, setOriginalData] = useState([]);
+
+  const [navio, setNavio] = useState();
+  const [input, setInput] = useState();
 
   useEffect(() => {
     api
@@ -71,6 +76,13 @@ export default function AnchoredShips() {
       .catch((err) => {
         console.error("ops! Ocorreu um erro" + err.response.data);
       });
+
+    const recuperarNavio = async () => {
+      const nomeNavio = await AsyncStorage.getItem("navio");
+      setNavio(nomeNavio);
+    };
+
+    recuperarNavio();
   }, []);
 
   function search(s) {
@@ -83,7 +95,17 @@ export default function AnchoredShips() {
           d.numero_viagem.includes(s)
       )
     );
+
+    setInput(s)
+    gravaNavio(s);
   }
+
+  const gravaNavio = async () => {
+    setNavio(input);
+    await AsyncStorage.setItem("navio", input);
+    //Keyboard.dismiss();
+    //alert("Salvo com sucesso!");
+  };
 
   return (
     <SafeAreaView>
@@ -107,6 +129,7 @@ export default function AnchoredShips() {
         <TextInput
           style={styles.input}
           placeholder="Buscar..."
+          value={input}
           onChangeText={(s) => search(s)}
           autoCapitalize="characters"
         />

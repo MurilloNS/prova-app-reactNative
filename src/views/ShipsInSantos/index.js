@@ -7,7 +7,6 @@ import {
 } from "react-native";
 
 import styles from "./styles";
-import SocialMediaSvgs from "../../components/SocialMediasIcons";
 
 import Clock from "../../../img/icons/Clock2.svg";
 import Rope from "../../../img/icons/Rope2.svg";
@@ -101,7 +100,6 @@ export default function ShipsInSantos({ navigation }) {
                     </TouchableOpacity>
                 </View>
             </View>
-            <SocialMediaSvgs />
         </View>
     );
 }
