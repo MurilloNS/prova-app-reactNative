@@ -1,5 +1,5 @@
-<h1 align="center">SPA-APP</h1>
-<p align="center">Aplicativo para visualizar a situação dos navios e principais serviços na Santos Port Authority</p>
+<h1 align="center">APP</h1>
+<p align="center">Aplicativo para visualizar a situação dos navios do Porto de Santos</p>
 <p align="center">
   <a href="https://www.npmjs.com/">
     <img src="https://img.shields.io/static/v1?label=NPM&message=V8.11.0&color=264775&style=for-the-badge"/>
@@ -9,20 +9,8 @@
   </a>
 </p>
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
  <a href="#pré-requisitos">Pré-requisitos</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
-</p>
-
-<h2>Objetivo</h2>
-<p>
-  Os colaboradores da Santos Port Authority precisam ver como está a situação das operações portuárias,
-  a fim de garantir que as operações sejam realizadas com regularidade, eficiência, segurança e respeito ao meio ambiente.
-  No site da SPA existe um monitoramento do desempenho e situação dos navios, 
-  o que possibilita a tomada de ações imediatas em caso de ocorrências e contribui para o melhor planejamento das manobras de atracação e desatracação.
-  <br/><br/>
-  Entretanto, esse monitoramento pode ser melhor ainda se estiver sempre na palma da mão do colaborador. Pensado nisso, a SPA-APP foi desenvolvido
-  para trazer essa informação da situação dos navios de maneira rápida e mostrar outros serviços que a SPA oferece.
 </p>
 
 <h2>Pré-requisitos</h2>
@@ -37,7 +25,7 @@
   
 ```
 # Clone este repositório
-$ git clone <http://git.portodesantos.com.br/codesp/app>
+$ git clone <https://github.com/MurilloNS/prova-app-reactNative>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd app
