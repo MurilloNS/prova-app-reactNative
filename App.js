@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, SafeAreaView, StatusBar, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Image } from "react-native";
 
 import ShipsInSantos from "./src/views/ShipsInSantos";
 
@@ -45,6 +45,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
